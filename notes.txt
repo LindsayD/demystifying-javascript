@@ -1,0 +1,163 @@
+Javascript
+                History -
+                                Why is it the way it is?  It's a crazy story.
+
+http://ask.metafilter.com/195482/Lets-assume-that-I-am-the-stupidest-person-that-ever-lived-Explain-to-me-what-JavaScript-is-what-it-does-and-how-a-moron-would-go-about-learning-it#2813956
+
+		Frame 1: Sun Logo - A long, long time ago, there was a company called Sun.
+		Frame 1: Sun created a programming language called Java.  They wanted it to run everywhere.  But it couldn't do that without enchanting a computer with a bit of magic first.
+		Frame 2: At the same time, in another part of the technology world, there was this new thing called the World Wide Web that was gaining popularity. 
+		Frame 3: A company called Netscape created something called Navigator, a browser that could give people access to the WWW. It was the new hotness of it's age.
+		Frame 4: Sun wanted to ride the wave of Navigator's popularity.  They asked Netscape to package up the magical bits that Java needed to run in with their browser so that Java would propegate widly.
+		Frame 5: Netscape was having it's own issues with a rival named Microsoft.  Microsoft had built their own browser called Internet Explorer, which could run Visual Basic Script in it. 
+		Frame 5: So Netscape agreed to help out, but only if Sun would let them include a scripting language with a name that implied it was as powerful as running Java in the browser to keep them ahead of Microsoft.
+		Frame 6: Netscape asked one of their developers, Brendan Eich, to make a working prototype of the new language in only 10 days.  Fortunately, Brendan is a really smart guy.
+		Frame7: He became the father of JavaScript.
+		Frame8: It wasn't perfect, and at first people didn't get it. As with all new toys, it was used to abuse (you could make things blink without a blink tag!), but a few people noticed how powerful it was, despite the flaws, such as the sage, Douglas Crockford, and evangelized it's merits to the development world.
+		Frame 9: Eventually, Javascript gained so much popularity that it ironically filled the promise that Java was supposed to: it runs everywhere, as long as there's a browser.
+
+
+Two main things to concieve find Zen in Javascript
+
+	1. It's about Functions and Objects, but really about Functions making Objects that have Functions
+		Objects are collections of properties
+			Properties can have attributes)
+			Methods are functions assigned to properties
+								
+		Three object categories
+			Type objects (Constructors)
+			Trait objects (Prototypes)
+			Instance objects (Instances)
+
+			Functions are the object factories
+				Every object has a constructor, every constructor is a function, functions are as important as objects.
+				Functions are first class citizens, unlike in classical OO languages.
+			Type objects: Constructors
+				Can be referenced from the prototype.constructor field
+				Sets the initial state of the instance object
+				Can be used to set instance methods (prototype cannot override).
+				Handy to verify an object's pedigree (myObj.constructor === MyBaseObject)
+			Trait object: Prototypes
+				Describe an instance object's shared type data and behavior
+					It is a special object created for every function constructor (not first class)
+					It is the instance's delegate for the methods defined in it
+				Modifying
+					Replacing the prototype as a whole (don't forget your constructor or "new" won't work right!)
+					Extending the prototype (declare each method, or use $.extend w/jQuery)
+					Powerful because
+						Extension is instant, providing new members to every instance object that shares the prototype.
+						The "Prototype Chain"
+							Every object has a prototype, and a constructor... if a member is not found on the instance, its constructor's prototype is consulted, and if not there, the next, and next until it hits the root of the Object prototype.  If not found there, comes back as undefined.  This is a form of behavioral inheritance: objects inheriting directly from objects (not classes).
+			Instance objects: Instances
+				New Instances
+					the prototype is effectively applied to the constructor
+						prototype members are accessible directly
+						constructor members are accessible directly
+						both source types of members can be overwritten on an instance and make the prototype members inaccessible to that instance directly (called "property shadowing")
+							but prototype's can still be referenced via constructor.prototype.
+							constructor members are more like initial state.  If you intend to have fields with different data per instance, just define them in the constructor...
+					The constructor can be referenced via a member, but not modified
+					Constructor can be replaced, but won't affect/replace instance's members, will just confuse inheritance...
+					The prototype is accessible via the constructor member
+
+	2. Closures
+
+		Context
+			Execution Context
+				Global context (window)
+				Function context (pushed on the stack)
+			Activation Object
+				Holds the passed in parameters values
+				Holds the state of the external variables
+			Variable Object
+				Holds local variables, local functions
+		Scope
+			Execution contexts are resolved LIFO (Stack) in a Scope Chain
+				For variables that are part of the Activation object, the chain is traversed until the value is defined. This allows closure, or the resolving of variables at a later time than the function definition (preservation of original scope).
+		What is "this"?
+			The instance object that is created for the Execution Context
+				When a function is executed, it refers to the instance object the function resides in (via constructor or prototype).
+				Otherwise, it refers to the global context (window)
+				"apply" and "call" change the execution context, so change what "this" refers to.
+				"this" is "broken" for nested functions more than one level deep on an instance object.  If used it actually ends up referring to the global context (window).  Best to set a reference early for use throughout definitions.
+		Types/Uses of closures
+			Callbacks (Asynchronous tasks)
+				Animations
+				Ajax
+			Event handlers
+			Service providers (offload responsibility, separation of concerns)
+				Retrivers
+				Persisters
+			Code clarity
+				Functional components (wrap related bits of functionality to prevent side effects and make it obvious what code interacts with each other and how)
+				Partial Application (Currying)															   
+		Best practices
+				Namespacing
+					Prevent conflicts with other libraries
+					Promote code clarity and self documentation
+						Organize by project, then by behavior group
+				Module pattern
+					Pros: allows for private scoping of variables, "black box"
+					Cons: kills subtyping (constructor on instance is Object, not the function);
+								
+Links
+http://www.colorzilla.com/gradient-editor/
+http://monkeyandcrow.com/blog/drawing_lines_with_css3/
+http://3easy.org/buildmobile/jquerymobile/#heart_css
+http://www.css3maker.com/css3-animation.html#
+http://w3schools.com/js/tryit.asp?filename=tryjs_write
+
+http://ask.metafilter.com/195482/Lets-assume-that-I-am-the-stupidest-person-that-ever-lived-Explain-to-me-what-JavaScript-is-what-it-does-and-how-a-moron-would-go-about-learning-it#2813956
+
+
+
+
+
+function Meme(name, graphic) {
+	this.name = name;
+	this.graphic = graphic;
+	this.rename = function(name) { this.name = name; } // 'this' only works at this level
+	
+	this.variations.push(this);
+};
+
+function Meme2(name) { 
+	this.name = name;
+};
+
+Meme2.prototype.variations = [];
+Meme2.prototype.topText = "Top Text";
+
+function TextMeme(name, graphic, top, bottom) {
+	this.name = name;
+	this.graphic = graphic;
+	this.rename = function(name) { this.name = name; } // 'this' only works at this level
+	this.topText = top;
+	this.variations.push(this);
+}
+TextMeme.prototype = new Meme2();
+
+Meme.prototype.variations = [];
+Meme.prototype.topText = "Top Text";
+Meme.prototype.bottomText = "Bottom Text";
+Meme.prototype.getVariations = function() { 
+	var names = '';
+	
+	for (var i = 0; i < this.variations.length ; i ++) {
+		names += this.variations[i].name + '<br/>';
+	}
+	
+	return names;
+};
+Meme.prototype.assemble = function() {
+	return '<div style="background-image: url(' + this.graphic + ');>' + this.name + '</div>';
+};
+
+var meme = new Meme("ERMAHGERD");
+meme.topText = "ERMAHGERD GERSBERMS!";
+meme.bottomText = "MY FRAVORIT BERKS!";
+var meme2 = new Meme('First World Problems');
+
+var tmeme = new TextMeme('test', '', 'top!!', 'bottom!!');
+
+document.write(meme2.topText + '<br/>' + meme.topText);

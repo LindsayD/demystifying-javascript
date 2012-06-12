@@ -1,0 +1,303 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Demystifying Javascript</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <link href="http://fonts.googleapis.com/css?family=Sansita+One|Alegreya:400,900" rel="stylesheet" />
+    <link href="css/demystifyingJS.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+	<div id="start" class="step" data-x="0" data-y="0" data-scale="4">
+        <div class="title">Demystifying Javascript</div>
+		<div class="blurb">How I learned to stop worrying and love the Prototype.</div>
+    </div>
+	
+	<div id="start2" class="step" data-x="0" data-y="0" data-z="-10" data-scale="4">
+        <div class="heart"></div>
+    </div>
+	
+	<div id="who" class="step" data-x="0" data-y="0" data-rotate-x="0" data-rotate-y="-90">
+		<span style="font-size: 0.75em">My name is</span>&nbsp;
+		<span class="title">Lindsay Donaghe</span>
+		<ul>
+		<li>I love <strong>Javascript</strong>.</li>
+		<li>I build <strong>widgets</strong>.</li>
+		<li>I like to <strong>share</strong>.</li>
+		</ul>
+    </div>
+	
+	<div id="who2" class="step" data-x="0" data-y="0" data-rotate-x="0" data-rotate-y="-90" data-scale="1">
+		<div style="position: absolute; top: 103px; left: 270px;">
+		We are creating a Javascript community:<br/>
+		Join us at meetup.intranet.gdg/<strong>starfield</strong>
+		</div>
+    </div>
+	
+	<div id="history" class="step" data-x="-1200" data-y="-2000">
+        <h1>Long, long ago, in 1995...</h1>
+    </div>
+	
+	<div id="concepts" class="step" data-x="0" data-y="-1500">
+        <div class="objects">Objects</div>
+		<div class="contexts">Contexts</div>
+    </div>
+	
+	<div id="obj1" class="step only-present" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+		<div class="substep">
+			<div class="g-property">
+			<span>Key</span>
+			<span>Value</span>
+			</div>
+		</div>
+    </div>
+	
+	<div id="obj2" class="step only-present" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+		<div class="substep">
+			<div class="g-property">Property</div>
+		</div>
+    </div>
+	
+	<div id="obj3" class="step only-present" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+		<div class="substep">
+			<div class="g-property">Property</div>
+			<div class="g-object">
+			</div>
+		</div>
+    </div>
+	
+	<div id="obj4" class="step only-present" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+		<div class="substep">
+			<div class="g-property">Property</div>
+			<div class="g-object">
+				<div>Object</div>
+				<ul>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				</ul>
+			</div>
+		</div>
+    </div>
+	
+	<div id="obj5" class="step only-present" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+		<div class="substep">
+			<div class="g-object type-object">
+				<div>Constructor</div>
+				<ul>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				</ul>
+			</div>
+			<div class="g-object trait-object">
+				<div>Prototype</div>
+				<ul>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				</ul>
+			</div>
+			<div class="g-object instance-object">
+				<div>Instance</div>
+				<ul>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				</ul>
+			</div>
+		</div>
+    </div>
+	
+	<div id="obj6" class="step only-present" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+		<div class="substep">
+			<div class="g-object type-object">
+				<div>Constructor</div>
+				<ul>
+				<li class="trait-color">Prototype</li>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				</ul>
+			</div>
+			<div class="g-object trait-object">
+				<div>Prototype</div>
+				<ul>
+				<li class="type-color">Constructor</li>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				</ul>
+			</div>
+			<div class="g-object instance-object">
+				<div>Instance</div>
+				<ul>
+				<li class="type-color">Constructor</li>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				</ul>
+			</div>
+		</div>
+    </div>
+	
+	<div id="constructor1" class="step only-group-constructor" data-isprop="true" data-group="constructor" data-x="-200" data-y="-1750" data-z="-800">
+		<div class="substep">
+			<div class="type-object-details object-details">
+				<div class="title">Constructor</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="constructor2" class="step only-present" data-group="constructor" data-x="-200" data-y="-1750" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>The Object Factory</div>
+				<code>
+					function Meme() {}
+				</code>
+			</div>
+		</div>
+	</div>
+	
+	<div id="constructor3" class="step only-present" data-group="constructor" data-x="-200" data-y="-1750" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Initializes an Instance</div>
+				<img src="images/code-constructor1.png" />
+			</div>
+		</div>
+	</div>
+	
+	<div id="constructor4" class="step only-present" data-group="constructor" data-x="-200" data-y="-1750" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Verifies object pedigree</div>
+				<img src="images/code-constructor2.png" />
+			</div>
+		</div>
+	</div>
+	
+	<div id="constructor5" class="step only-present" data-group="constructor" data-x="-200" data-y="-1750" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Accessed by...</div>
+				<img src="images/code-constructor3.png" />
+			</div>
+		</div>
+	</div>
+	
+	<div id="prototype" class="step" data-mimic="obj6"></div>
+	
+	<div id="prototype1" class="step only-group-prototype" data-isprop="true" data-group="prototype" data-x="-200" data-y="-1025" data-z="-800">
+		<div class="substep">
+			<div class="type-object-details object-details">
+				<div class="title">Protoype</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="prototype2" class="step only-present" data-group="prototype" data-x="-200" data-y="-1025" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Describes shared behavior and data</div>
+				<img src="images/code-prototype1.png" />				
+			</div>
+		</div>
+	</div>
+	
+	<div id="prototype3" class="step only-present" data-group="prototype" data-x="-200" data-y="-1025" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Another manipulation</div>
+				<img src="images/code-prototype2.png" />				
+			</div>
+		</div>
+	</div>
+	
+	<div id="prototype-chain" data-group="objects" class="step prototypechain only-present" data-x="-800" data-y="-1500" data-z="-3500" data-rotate-z="90">
+		<div>Prototype Chain</div>
+		<div>Can we find the property in the instance?</div>
+			<div>Yes - Return it!</div>
+			<div>No - Check the <span class="pcnext">constructor's prototype.</span></div>
+    </div>
+	
+	<div id="prototype-chain-2" data-group="objects" class="step prototypechain only-present" data-x="-920" data-y="-1400" data-z="-3000" data-rotate-z="90">
+		<div style="padding-top:175px;">Can we find the property in the</div>
+			<div style="font-size: 170%;background: rgb(215, 215, 215);">constructor's prototype?</div>
+			<div>Yes - Return it!</div>
+			<div>No - Check the <span class="pcnext">constructor's prototype's constructor.</span></div>
+    </div>
+	
+	<div id="concepts2" class="step" data-mimic="concepts" data-x="0" data-y="-1500" data-scale="1"></div>
+	
+	<div id="con1" class="step" data-x="400" data-y="-1500" data-rotate-z="-90">
+		<div class="title">Contexts are about the now.</div>
+    </div>
+
+	<div id="overview" class="step" data-x="0" data-y="-500" data-scale="6">
+    </div>
+</div>
+
+<script src="js/impress.js"></script>
+<script>impress(undefined, {
+	onStepEnter: function(step) { if (window[step.id + 'Action'] !== undefined) window[step.id + 'Action'](step); }
+}).init();
+
+function obj6Action(step)
+{
+	var to = $('#obj6 .type-object');
+	console.log('in obj6 action ' + to.style.top);
+}
+
+var $ = function ( selector, context ) {
+        context = context || document;
+        return context.querySelector(selector);
+};
+
+function createLine(x1,y1, x2,y2){
+    var length = Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+  var angle  = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+  var transform = 'rotate('+angle+'deg)';
+
+    var line = $('<div>')
+        .appendTo('#impress')
+        .addClass('line')
+        .css({
+          'position': 'absolute',
+          'transform': transform
+        })
+        .width(length)
+        .offset({left: x1, top: y1});
+
+    return line;
+}
+
+</script>
+</body>
+</html>

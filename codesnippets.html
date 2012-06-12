@@ -1,0 +1,60 @@
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Meme Maker</h1>
+
+<script type="text/javascript">
+function Meme(name, graphic) {
+	if (name) this.name = name;
+	this.graphic = graphic;
+	this.rename = function(name) { this.name = name; } // 'this' only works at this level
+	
+	this.variations.push(this);
+};
+
+Meme.prototype.name = "Meme"; // set default values
+Meme.prototype.variations = [];
+Meme.prototype.getVariations = function() { 
+	var names = '';
+	
+	for (var i = 0; i < this.variations.length ; i ++) {
+		names += this.variations[i].name + '<br/>';
+	}
+	
+	return names;
+};
+Meme.prototype.assemble = function() {
+	return '<div style="background-image: url(' + this.graphic + ');>' + this.name + '</div>';
+};
+
+function TextMeme(name, graphic, top, bottom) {
+	this.constructor = TextMeme; // required for subclassing
+	this.name = name;
+	this.graphic = graphic;
+	this.rename = function(name) { this.name = name; } // 'this' only works at this level
+	this.topText = top;
+	this.bottomText = bottom;
+	this.variations.push(this);  // accessing Meme.prototype.variations
+}
+TextMeme.prototype = new Meme(); // required for subclassing
+TextMeme.constructor = Meme; // required for subclassing
+//TextMeme.prototype.variations = [];
+TextMeme.prototype.topText = "Top Text";
+TextMeme.prototype.bottomText = "Bottom Text";
+TextMeme.prototype.assemble = function() {
+	return '<div style="width: 500px; height: 350px; border:1px solid #000;background-image: url(' + this.graphic + ');><div style="position:absolute; width: 500px; text-align:center; top:0; left: 0;">' + this.topText + '</div><div style="position:absolute; width: 500px; text-align:center; bottom:0; left: 0;">' + this.bottomText + '</div></div>';
+};
+
+var meme = new Meme('Nyan Cat', '');
+var memeFWP = new TextMeme('First World Problems', '', 'Not enough dressing on my salad.', 'Now my salad tastes like SALAD.');
+var memeATT = new TextMeme('All The Things', '', 'RECYCLE', 'ALL THE APP POOLS!');
+var memeERM = new TextMeme('ERMAHGERD', '', 'ERMAHGERD GERSBERMS!', 'MY FRAVORIT BERKS!');
+
+document.write(memeATT.getVariations());
+</script>
+
+</body>
+</html> 

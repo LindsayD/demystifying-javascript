@@ -46,8 +46,8 @@ Two main things to concieve find Zen in Javascript
 					Extending the prototype (declare each method, or use $.extend w/jQuery)
 					Powerful because
 						Extension is instant, providing new members to every instance object that shares the prototype.
-						The "Prototype Chain"
-							Every object has a prototype, and a constructor... if a member is not found on the instance, its constructor's prototype is consulted, and if not there, the next, and next until it hits the root of the Object prototype.  If not found there, comes back as undefined.  This is a form of behavioral inheritance: objects inheriting directly from objects (not classes).
+				The "Prototype Chain"
+					Every object has a prototype, and a constructor... if a member is not found on the instance, its constructor's prototype is consulted, and if not there, the next, and next until it hits the root of the Function prototype.  If not found there, comes back as undefined.  This is a form of behavioral inheritance: objects inheriting directly from objects (not classes).
 			Instance objects: Instances
 				New Instances
 					the prototype is effectively applied to the constructor

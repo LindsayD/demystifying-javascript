@@ -92,6 +92,10 @@ body.impress-group-objects {
     transition: background-color 500ms ease-out 200ms;*/
 }
 
+body.impress-group-instance {
+	background-color: #8EFF9D;
+}
+
 body.impress-group-constructor {
 	background-color: #8EBDFF;
 }
@@ -221,12 +225,14 @@ a:focus {
 }
 
 /* if we want steps that only show when they are part of the active group... */
+.impress-enabled  .step.only-group-instance,
 .impress-enabled  .step.only-group-constructor,
 .impress-enabled  .step.only-group-prototype
 {
     opacity: 0;
 }
 
+.impress-enabled.impress-group-instance .step.only-group-instance,
 .impress-enabled.impress-group-constructor .step.only-group-constructor,
 .impress-enabled.impress-group-prototype .step.only-group-prototype 
 {
@@ -707,6 +713,7 @@ to {top:50px; left: 470px; -webkit-transform: scale(0.8);}
 	text-align: center;
 }
 
+.impress-group-instance .content,
 .impress-group-constructor .content,
 .impress-group-prototype .content
  {

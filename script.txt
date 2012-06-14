@@ -103,18 +103,33 @@ Object Types:
 Prototypes:
 	Prototypes are where it gets cool.
 	Every object has one.
-	It holds the properties that are shared between all the objects built with the same constructor.
-	The awesome part about it is that if you add something to the prototype
+	Every object with the same constructor shares one.
+	It operates as a delegate for the constructed instances.
+	
+Prototypes - extensibility
+	The awesome part about the prototype
+		if you add something to it
 		it instantly is available to every object that shares that constructor.
+	It doesn't matter at what point the property is added as long as the instance calls it later.
 	This allows for all kinds of extensibility!
 	
-	It is a delegate for an object. 
-	If the property can't be found on the instance, then it is looked for in the prototype.
-	Be careful! If you set properties on an instance, they hide the ones defined on the prototype.
-		This is called property shadowing
-		it's actually not a bad thing... 
-		we can use the prototype to define default properties that are populated later.
-	
+Prototype - really instant extensibility
+	What kind of messes with my head is that
+		if you extend the prototype,
+		it's even accessible in the constructor itself.
+		because the constructor is setting properties on the Instance
+		and the Instance delegates to the prototype.
+
+Prototype - defaults:
+	You can use the prototype to set property defaults for an instance
+	These can be overwritten by setting the property on the instance directly.
+		this is called property shadowing
+	Understand you're not changing the value for the prototype
+		but only on the instance.
+		be careful with this because it might have unintended consequences...
+	But the default is still accessible via the prototype if needed.
+
+Prototype - alternative method for manipulation
 	The prototype is accessed via a property on the constructor.
 	You can treat it like any other object instance and add properties to it directly.
 	Since the prototype is a delegate you can even reference the properties defined on it in the constructor.

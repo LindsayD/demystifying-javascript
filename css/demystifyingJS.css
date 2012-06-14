@@ -77,7 +77,7 @@ body {
 }
 
 body.impress-group-objects {
-	background-color: rgb(229,112,231); /* Old browsers */
+	background-color: #A086CE; /*rgb(160,134,206); /* Old browsers */
 	/*
 	background: -moz-radial-gradient(center, ellipse cover,  rgba(229,112,231,1) 0%, rgba(200,94,199,1) 47%, rgba(168,73,163,1) 100%); 
 	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(229,112,231,1)), color-stop(47%,rgba(200,94,199,1)), color-stop(100%,rgba(168,73,163,1)));

@@ -132,9 +132,38 @@ Prototype - defaults:
 Prototype - alternative method for manipulation
 	The prototype is accessed via a property on the constructor.
 	You can treat it like any other object instance and add properties to it directly.
-	Since the prototype is a delegate you can even reference the properties defined on it in the constructor.
+	Or you can create an object and replace the prototype object with it.
+	This can be bad though, because when a prototype instance is created
+		it is automatically populated with some properties
+		one of which is your constructor
+		Just setting this object to another will lose those properties
+	If you are using jQuery you can easily get around this
+		by using the extend method.  It preserves the original properties.
 	
-Prototype definiition variation:
+Prototype Inheritance - 
+	Hopefully this makes a bit more sense now
+	How all these objects are connected
+	The Instance has a Constructor and a Prototype
+	The Constructor initializes the Instance
+		gives us conceptual typing
+		and gives access to the Prototype
+	The Prototype is a property delegate for the Instance
+		and gives us instant extensibility
+		as well as a way to provide default values.
+	The Prototype is also the way we can simulate inheritance in Javascript
+	
+Prototype Inheritance -
+	A caveat before we move on
+		Inheritance is really a concept best suited to Class based languages
+		It is generally best to stay shallow in Object based languages like Javascript
+		Mainly because creating inheritance is not straightforward as it might seem
+			and because you have instant extensibility
+			and because there are limitations on constructors
+	But inheritance can be done, 
+		and understanding it will help us understand JS objects even better.
+		so here we go.
+		
+	
 	
 	
 	

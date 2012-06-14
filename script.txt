@@ -1,0 +1,125 @@
+Intro:
+- I love Javascript
+- been with Godaddy for 4.5 years
+
+Intro 2
+- In the advocate role
+- Starfield UI is an effort to get the company dev community sharing. 
+- starting a community around JS. 
+- Join us!
+
+History:
+Todo
+
+Concepts:
+	There are two things you need to know to understand Javascript
+	Objects and how they are "typed"
+	Contexts and how Javascript executes
+	
+Objects - Data:
+	Lets start with the basics.
+	Programs deal with data.
+	We can give bits of data a name
+	And that becomes a Key and a Value, or key-value pair
+
+Objects - Properties:
+	We can also call a key-value pair a Property
+	
+Objects - Properties:
+	An object is really just a holder
+
+Objects - Properties:
+	It holds a collection of properties.
+	
+JS Objects:
+	Everything is an object in Javascript, even the objects that define an object.
+	There are three of these object types.
+	
+JS Objects References:
+	Each of these types point to each other in some way via properties and one of them is a delegate
+	
+Instances:
+	Lets look at instances first.
+	An instance is what you are most familiar with working in Javascript.
+	You can just declare one when you need it.
+
+Instances - Extensibility:
+	An empty object isn't very useful
+	So we add properties to it: our data, in key/value pairs
+	And we add methods by setting a function as a property value
+	
+Instances - Manipulations:
+	We're up and running with our object.
+	We can change our property values
+	We can call our methods
+	We can iterate through the properties on our object and do things with them
+	- but wait - this can be a bit dangerous - we'll find out why in a bit
+	
+Instances Duplication:
+	Since our instance is so awesome, maybe we want another one
+	It would be the same, but with different data.
+	So should we just make another copy?  
+	We'll have to add the same properties to every instance
+	This doesn't seem that great of a plan.
+	
+Instances Constructor:
+	There is a better way.  
+	We were creating our objects with an Object Literal.
+	But we can build objects with a function.
+	In this case we're just making empty objects.
+	But we can do better.
+	
+Object Types:
+	Let's look at Constructors.
+	
+Constructors:
+	Constructors are Object Factories
+	
+Constructors - initializing:
+	All the properties we were setting on our Instance we can put in the constructor instead
+	This actually sets the properties on the Instance directly.
+	We can create as many copies of the Instance as we want by calling the new keyword
+	
+Constructors - where:
+	The constructor is an inherited property of the instance we built with it so we can always reference it
+	It is really a property inherited off the Object prototype, 
+		but we'll get more into that in a bit - for now think of it as "built-in".
+	It is also a property of the prototype of itself, but we'll get more into that in a bit.
+	
+Constructors - pedigree:
+	A constructor gives us a way to create custom objects in Javascript
+	It's conceptually like a type, but it is not actually a type
+	We can use it to verify an object's pedigree 
+	but it's type will always be Object
+	
+Object Types:
+	So we have instances that hold properties and methods
+	and we have Constructors which 
+		build copies of instances 
+		and initialize instances properties with data 
+		and give us a conceptual way to refer to the instances as the "same type".
+	So what about the Prototype?
+	
+Prototypes:
+	Prototypes are where it gets cool.
+	Every object has one.
+	It holds the properties that are shared between all the objects built with the same constructor.
+	The awesome part about it is that if you add something to the prototype
+		it instantly is available to every object that shares that constructor.
+	This allows for all kinds of extensibility!
+	
+	It is a delegate for an object. 
+	If the property can't be found on the instance, then it is looked for in the prototype.
+	Be careful! If you set properties on an instance, they hide the ones defined on the prototype.
+		This is called property shadowing
+		it's actually not a bad thing... 
+		we can use the prototype to define default properties that are populated later.
+	
+	The prototype is accessed via a property on the constructor.
+	You can treat it like any other object instance and add properties to it directly.
+	Since the prototype is a delegate you can even reference the properties defined on it in the constructor.
+	
+Prototype definiition variation:
+	
+	
+	

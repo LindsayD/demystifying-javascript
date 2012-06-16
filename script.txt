@@ -140,7 +140,7 @@ Prototype - alternative method for manipulation
 	If you are using jQuery you can easily get around this
 		by using the extend method.  It preserves the original properties.
 	
-Prototype Inheritance - 
+Prototype Review - 
 	Hopefully this makes a bit more sense now
 	How all these objects are connected
 	The Instance has a Constructor and a Prototype
@@ -152,7 +152,7 @@ Prototype Inheritance -
 		as well as a way to provide default values.
 	The Prototype is also the way we can simulate inheritance in Javascript
 	
-Prototype Inheritance -
+
 	A caveat before we move on
 		Inheritance is really a concept best suited to Class based languages
 		It is generally best to stay shallow in Object based languages like Javascript
@@ -163,6 +163,41 @@ Prototype Inheritance -
 		and understanding it will help us understand JS objects even better.
 		so here we go.
 		
+Prototype Inheritance -
+	So we want to make another version of our Meme class
+	This one will have text on the top and the bottom of the graphic
+	But we want to reuse all the things we already have in Meme
+		Including the prototype
+	
+	Inheritance in Javascript is done via the Prototype
+		We replace it with an instance of the Object we want to inherit from
+		
+Prototype Inheritance - 
+		
+	Remember, though, that it wasn't a great idea before
+		when we were going to replace the prototype with an object instance
+		because we would lose the properties that the prototype instance gets automatically
+		namely the constructor property.
+		
+	Now we have lost the reference to TextMeme as our constructor.
+		Can you guess what our constructor is at this point?
+		It's Meme.
+		Why?
+		Because we are using and instance of Meme as our prototype.
+		The Constructor property of an Instance of Meme would point to Meme
+		So how do we fix this?
+		
+Prototype Inheritance - 
+	Let reset TextMeme's prototype's constructor to TextMeme instead of Meme.
+	That should fix everything...
+	We get back TextMeme as our constructor.
+	But with inheritance, shouldn't TextMeme's constructor be Meme?
+	We can fix that as well.
+	It's not strictly necessary for Prototype inheritance to work
+		but if you want to be able to check pedigrees you need to set it.
+		
+Prototype chaining - 
+	
 	
 	
 	

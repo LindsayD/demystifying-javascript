@@ -145,6 +145,7 @@
 	
 	<div id="obj6" class="step only-present" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
 		<div class="substep">
+			<div class="curve1"></div><div class="curve2"></div><div class="curve3"></div>
 			<div class="g-object type-object">
 				<div>Constructor</div>
 				<ul>
@@ -367,24 +368,89 @@
 		</div>
 	</div>
 	
-	<div id="prototype-chain" data-group="objects" class="step prototypechain only-present" data-x="-800" data-y="-1500" data-z="-3500" data-rotate-z="90">
+	<div id="protochain" class="step only-present" data-group="prototype" data-x="-200" data-y="-1025" data-z="-800">
+			<div class="curve"></div>
+			<div class="g-object pc1 instance-color">
+				<div>I:meme</div>
+				<ul>
+				<li>name</li>
+				<li>graphic</li>
+				<li>assemble</li>
+				<li>...</li>
+				</ul>
+			</div>
+			<div class="g-object pc2 trait-color">
+				<div>P:TextMeme</div>
+				<ul>
+				<li>topText</li>
+				<li>bottomText</li>
+				<li>font</li>
+				<li>...</li>
+				</ul>
+			</div>
+			<div class="g-object pc3 trait-color">
+				<div>P:Meme</div>
+				<ul>
+				<li>author</li>
+				<li>name</li>
+				<li>variations</li>
+				<li>...</li>
+				</ul>
+			</div>
+	</div>
+	
+	<div id="prototype-chain" data-group="objects" style="display:none" class="stepdiabled prototypechain only-present" data-x="-800" data-y="-1500" data-z="-3500" data-rotate-z="90">
 		<div>Prototype Chain</div>
 		<div>Can we find the property in the instance?</div>
 			<div>Yes - Return it!</div>
 			<div>No - Check the <span class="pcnext">constructor's prototype.</span></div>
     </div>
 	
-	<div id="prototype-chain-2" data-group="objects" class="step prototypechain only-present" data-x="-920" data-y="-1400" data-z="-3000" data-rotate-z="90">
+	<div id="prototype-chain-2" data-group="objects" style="display:none" class="stepdisabled prototypechain only-present" data-x="-920" data-y="-1400" data-z="-3000" data-rotate-z="90">
 		<div style="padding-top:175px;">Can we find the property in the</div>
 			<div style="font-size: 170%;background: rgb(215, 215, 215);">constructor's prototype?</div>
 			<div>Yes - Return it!</div>
 			<div>No - Check the <span class="pcnext">constructor's prototype's constructor.</span></div>
     </div>
 	
-	<div id="concepts2" class="step" data-mimic="concepts" data-x="0" data-y="-1500" data-scale="1"></div>
+	<div id="concepts2" class="step" data-mimic="concepts" data-x="0" data-y="-1500"></div>
 	
-	<div id="con1" class="step" data-x="400" data-y="-1500" data-rotate-z="-90">
-		<div class="title">Contexts are about the now.</div>
+	<div id="contexts1" class="step" data-group="contexts" data-x="400" data-y="-1500" data-rotate-z="-90">
+		<div class="title">Contexts</div>
+		<div class="context global-context">
+			<div class="c-name">Global Context: SCRIPT</div>
+			<div class="co-name">SCRIPT</div>
+			<div class="context function-context">
+				<div class="c-name">Function Context: Meme</div>
+					<div class="co-name">Function: Meme</div>
+					<div class="context function-context">
+						<div class="c-name">Function Context: display</div>
+						<div class="co-name">Function: display</div>
+					</div>
+					<div class="context function-context">
+						<div class="c-name">Function Context: onDisplay</div>
+						<div class="co-name">Function: onDisplay</div>
+					</div>
+					<div class="context function-context">
+						<div class="c-name">Function Context: getMemes</div>
+						<div class="co-name">Function: getMemes</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+	
+	<div id="contexts1" class="step" data-group="contexts" data-x="400" data-y="-1500" data-rotate-z="-90">
+		<div class="title">Contexts</div>
+		<div class="context global-context">
+			<div class="c-name">Global Context: SCRIPT</div>
+		</div>
+		<div class="stack ">
+			
+		</div>
+		<div class="code">
+			
+		</div>
     </div>
 
 	<div id="overview" class="step" data-x="0" data-y="-500" data-scale="6">

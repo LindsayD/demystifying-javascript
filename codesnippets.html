@@ -8,14 +8,18 @@
 
 <script type="text/javascript">
 function Meme(name, graphic) {
-	if (name) this.name = name;
-	this.graphic = graphic;
-	this.rename = function(name) { this.name = name; } // 'this' only works at this level
-	
-	this.variations.push(this);
+	if (name && name != '') 
+	{
+		this.name = name;
+		this.graphic = graphic;
+		this.rename = function(name) { this.name = name; } // 'this' only works at this level
+		
+		this.variations.push(this);
+	}
 };
 
 Meme.prototype.name = "Meme"; // set default values
+Meme.prototype.author = "unknown";
 Meme.prototype.variations = [];
 Meme.prototype.getVariations = function() { 
 	var names = '';
@@ -31,29 +35,65 @@ Meme.prototype.assemble = function() {
 };
 
 function TextMeme(name, graphic, top, bottom) {
-	this.constructor = TextMeme; // required for subclassing
+	if (name && name != '') {
 	this.name = name;
 	this.graphic = graphic;
-	this.rename = function(name) { this.name = name; } // 'this' only works at this level
 	this.topText = top;
 	this.bottomText = bottom;
 	this.variations.push(this);  // accessing Meme.prototype.variations
+	}
 }
 TextMeme.prototype = new Meme(); // required for subclassing
+TextMeme.prototype.constructor = TextMeme; // required for subclassing
 TextMeme.constructor = Meme; // required for subclassing
 //TextMeme.prototype.variations = [];
 TextMeme.prototype.topText = "Top Text";
 TextMeme.prototype.bottomText = "Bottom Text";
+TextMeme.prototype.font = "Impact";
 TextMeme.prototype.assemble = function() {
 	return '<div style="width: 500px; height: 350px; border:1px solid #000;background-image: url(' + this.graphic + ');><div style="position:absolute; width: 500px; text-align:center; top:0; left: 0;">' + this.topText + '</div><div style="position:absolute; width: 500px; text-align:center; bottom:0; left: 0;">' + this.bottomText + '</div></div>';
 };
+
+function MultiPanelMeme(name, graphics, top, bottom) {
+	this.name = name;
+	this.topText = top;
+	this.bottomText = bottom;
+	this.graphics = graphics;
+	this.panelCount = graphics.length;
+	this.variations.push(this);  // accessing Meme.prototype.variations
+}
+
+MultiPanelMeme.prototype = new TextMeme();
+MultiPanelMeme.prototype.constructor = MultiPanelMeme;
+MultiPanelMeme.constructor = TextMeme;
 
 var meme = new Meme('Nyan Cat', '');
 var memeFWP = new TextMeme('First World Problems', '', 'Not enough dressing on my salad.', 'Now my salad tastes like SALAD.');
 var memeATT = new TextMeme('All The Things', '', 'RECYCLE', 'ALL THE APP POOLS!');
 var memeERM = new TextMeme('ERMAHGERD', '', 'ERMAHGERD GERSBERMS!', 'MY FRAVORIT BERKS!');
+var memeSK = new MultiPanelMeme('Sad Keanu', ['',''], 'Top', 'bottom');
 
-document.write(memeATT.getVariations());
+function instanceOf(object, constructor) {
+  while (object != null) {
+    if (object == constructor.prototype)
+      return true;
+    object = Object.getPrototypeOf(object);
+  }
+  return false;
+}
+
+function getProps(obj) {
+	var props = [];
+	for (var prop in obj) {
+		if (obj.hasOwnProperty(prop)) {
+			props.push(prop);
+		}
+	}
+	
+	return props;
+}
+
+document.write(memeSK.getVariations());
 </script>
 
 </body>

@@ -63,23 +63,50 @@ Two main things to concieve find Zen in Javascript
 	2. Closures
 
 		Context
+			Phases:
+				Compilation - when Variable Objects are created and pushed on the stack
+				Execution - when contexts are made made
+					Variable Objects become Activation Objects 
+						the variables (properties of the Activation Object) are evaluated
+					The Activation Object gets the arguments property
+						arguments.callee - the function being called (ECMA disallows in strict mode)
+						arguments.caller - the function (if any) from which the current was called (ECMA disallows in strict mode).
+					Scope Object is created, Scope Chain determined
+						Global contexts don't have a scope object, since they're always at the top.
+					'this' is determined (the object that the function is a method of)
+					Code is executed against those values line by line
+						new contexts are spawned as encountered.
 			Execution Context
 				Global context (window)
 				Function context (pushed on the stack)
-			Activation Object
-				Holds the passed in parameters values
-				Holds the state of the external variables
-			Variable Object
-				Holds local variables, local functions
-		Scope
-			Execution contexts are resolved LIFO (Stack) in a Scope Chain
-				For variables that are part of the Activation object, the chain is traversed until the value is defined. This allows closure, or the resolving of variables at a later time than the function definition (preservation of original scope).
+			Variable Objects
+				Variable Object (Variable Object during Compilation)
+					Holds local variables, local functions
+				Activation Object (Function Context - Variable object during Execution)
+					Holds the passed in parameters values
+					//Holds the state of the external variables
+				Global Object - (Global Context - window object)
+					Holds same stuff as Activation Object, except for the arguments since it doesn't have them.
+			Scope
+				Execution contexts are resolved LIFO (Stack) in a Scope Chain
+					For variables that are part of the Activation object, the chain is traversed until the value is defined. 
+						This allows closure, or the resolving of variables at a later time than the function definition 
+							(preservation of original scope).
+		
+		Closures
+			Closures are functions that are executed in a different context from the one they were defined in.
+				They have references to the variables that were in scope of where they were defined.
+				Since they are functions, they can be passed around just like any other object.
+				And since they are functions they can be executed at any time.
 		What is "this"?
 			The instance object that is created for the Execution Context
 				When a function is executed, it refers to the instance object the function resides in (via constructor or prototype).
 				Otherwise, it refers to the global context (window)
 				"apply" and "call" change the execution context, so change what "this" refers to.
-				"this" is "broken" for nested functions more than one level deep on an instance object.  If used it actually ends up referring to the global context (window).  Best to set a reference early for use throughout definitions.
+				"this" is "broken" for nested functions more than one level deep on an instance object.  If used it actually ends up referring to the global context (window).  
+					Best to set a reference early for use throughout definitions.
+		
+		
 		Types/Uses of closures
 			Callbacks (Asynchronous tasks)
 				Animations
@@ -99,6 +126,11 @@ Two main things to concieve find Zen in Javascript
 				Module pattern
 					Pros: allows for private scoping of variables, "black box"
 					Cons: kills subtyping (constructor on instance is Object, not the function);
+				Prototype Extension for Native Objects
+					Be careful with it... could clash with new language features
+					Make sure to name your methods uniquely.
+					Don't extend DOM objects... could change for every browser.
+					If it's a complicated process, might be better to write your own method under a namespace.
 								
 Links
 http://www.colorzilla.com/gradient-editor/

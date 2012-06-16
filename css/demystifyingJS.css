@@ -473,7 +473,8 @@ to {top:300px;}
     transform:         rotate(-90deg);
 }
 
-.instance-object { opacity: 0; background-color: #8EFF9D;}
+.instance-object, .instance-color { background-color: #8EFF9D;}
+.instance-object { opacity: 0; }
 #obj5.active .instance-object,
 #obj6.active .instance-object
 {
@@ -623,6 +624,58 @@ from {top: 250px; left: 250px; -webkit-transform: scale(1);}
 to {top:50px; left: 470px; -webkit-transform: scale(0.8);}
 }
 
+#obj6  .curve1 {
+	position: absolute;
+	border-width: 10px 0 0 0;
+	border-style: solid;
+    border-color: #f00 transparent transparent transparent;
+	-moz-border-radius: 100%;
+    border-radius: 100%;
+	height: 80px;
+	width: 600px;
+	top: 40px;
+	left: 70px;
+}
+
+#obj6  .curve2 {
+	position: absolute;
+	border-width: 0 0 10px 0;
+	border-style: solid;
+    border-color: transparent transparent #f00 transparent;
+	-moz-border-radius: 0 0 0 80%;
+    border-radius: 0 0 0 80%;
+	height: 80px;
+	width: 150px;
+	top: 80px;
+	left: 300px;
+}
+
+#obj6  .curve3 {
+	position: absolute;
+	border-width: 25px 0 0 0;
+	border-style: solid;
+    border-color: #f00 transparent transparent transparent;
+	-moz-border-radius: 60% 10px 0 10px;
+    border-radius: 60% 10px 0 10px;
+	height: 30px;
+	width: 40px;
+	top: 50px;
+	left: 70px;
+}
+
+#obj6 .curve3:after {
+    content: " ";
+	position: absolute;
+	border-width: 0 0 25px 0;
+	border-style: solid;
+    border-color: transparent transparent #000 transparent;
+	-moz-border-radius:  0 0 60% 0;
+    border-radius: 0 0 60% 0;
+	height: 30px;
+	width: 40px;
+	top: -50px;
+	left: 0;
+}
 
 .g-object ul {
 	left: 70px;
@@ -720,6 +773,36 @@ to {top:50px; left: 470px; -webkit-transform: scale(0.8);}
 	margin-top: 100px;
 }
 
+#protochain  .curve {
+	position: absolute;
+	border-width: 10px 0 0 0;
+	border-style: solid;
+    border-color: #f00 transparent transparent transparent;
+	-moz-border-radius: 100%;
+    border-radius: 100%;
+	height: 80px;
+	width: 150px;
+	top: 40px;
+	left: 200px;
+}
+
+#protochain .g-object {
+	position: absolute;
+	top: 50px !important;
+	-moz-transform: scale(0.7);
+	-webkit-transform: scale(0.7);
+	transform: scale(0.7);	
+}
+#protochain .pc1 {
+	left: 0;
+}
+#protochain .pc2 {
+	left: 300px;
+}
+#protochain .pc3 {
+	left: 650px;
+}
+
 .prototypechain.future{
 	opacity: 0;
 }
@@ -730,6 +813,27 @@ to {top:50px; left: 470px; -webkit-transform: scale(0.8);}
 
 .prototypechain.past {
 	opacity: 1;
+}
+
+#contexts1 .context
+{
+	border: 2px solid #000;
+	padding: 20px;
+}
+#contexts1 .c-name
+{
+	padding: 5px;
+	color: #ddd;
+}
+
+#contexts1 .global-context
+{
+	background: #fff;
+}
+
+#contexts1 .function-context
+{
+	background: #ddf;
 }
 
 .slide q {

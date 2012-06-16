@@ -1,0 +1,42 @@
+var memes = [],
+	currentMemeIndex = -1;
+
+function Meme(name, graphic) {
+    var $m = this,
+        width = 500,
+        height = 350;
+
+    $m.name = name;
+    $m.graphic = graphic;
+	$m.assemble = function(parent) {
+		parent.append(
+			'<div style="width:' + width + 'px; height:' + height + 'px;">' +
+				'<div style="background-image: url(' + $m.graphic + ');"></div>' + $m.name + '</div>' +
+			'</div>'
+		);
+	}
+}
+
+function buildMemes(onBuilt) {
+
+	function addMeme(meme) {
+		memes.push(meme);
+		currentMemeIndex = memes.length - 1;
+	}
+
+	addMeme(new Meme('Nyan Cat', 'images/nyancat.png'));
+	addMeme(new Meme('Hipster Dog', 'images/hipsterdog.png'));
+	addMeme(new Meme('Strawberry Turtle', 'images/strawberryturtle.png'));
+	
+	onBuilt(memes);
+}
+
+function displayMemes(memes) { 
+    $('#main').empty().append('<h1>' + memes.length + ' Memes:</h1>');
+
+    for (var i=0; i < memes.length; i++) {        
+        memes[i].assemble($('#main'));
+    }
+}
+ 
+buildMemes(displayMemes);

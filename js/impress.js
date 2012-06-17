@@ -210,6 +210,7 @@
 	
 	var optionDefaults = {
 		onStepEnter: function(step) {},
+		onSubStepEnter: function(step, substepIndex, forward) {},
 		onStepLeave: function(step) {}
 	};
 	
@@ -330,9 +331,11 @@
                     },
                     scale: toNumber(data.scale, 1),
                     el: el,
+					substeps: data.substeps ? parseInt(data.substeps) : 0, // LLD
+					substep: 0, // LLD
 					index: idx, // LLD
 					mimic: data.mimic, // LLD
-					isprop: data.isprop,
+					isprop: data.isprop, //LLD
 					group: data.group // LLD
                 };
             
@@ -469,26 +472,68 @@
 			
 			// if we're supposed to move to the next step because this one is a prop, set it up.
 			var moveImmediate = step.isprop ? next : undefined; 
+			var forward = true;
             
             if ( activeStep ) {
 				// LLD - there was a mimiced step, so fix things for it, not the actual active one.
 				var as = activeStep.dataset.mimic && activeStep.dataset.mimic != '' ? getStep(activeStep.dataset.mimic) : activeStep;
-				as.classList.remove("active");
-				body.classList.remove("impress-on-" + as.id);
-				if (as.dataset.group) body.classList.remove("impress-group-" + as.dataset.group);
+				var asData = stepsData["impress-" + as.id];
 				
-				// LLD - set up the direction we're supposed to go in if we are to move
-				if (moveImmediate !== undefined) 
+				var asi = stepsData["impress-" + activeStep.id].index;
+				var rsi = stepsData["impress-" + realStep.id].index;
+				forward = asi < rsi;
+				
+				var stepInRange = function(sc,s) {
+					if (sc <= 0) return false;
+					var inRange = (
+						(forward && (s >= 1 && s < sc))
+						||
+						(!forward && (s > 1 && s <= sc))
+					);
+					console.log('inRange = ' + inRange);
+					return inRange;
+				};
+				
+				console.log('has ' + asData.substeps + 
+					' substeps, current = ' + asData.substep + 
+					' moving ' + (forward ? 'forward' : 'backward') +
+					' in range = ' + stepInRange(asData.substeps, asData.substep)
+				);
+				// LLD - if we have substeps and this isn't the first one, then keep doing them.
+				// TODO - figure out if we are moving forward or back and adjust step.
+				if (stepInRange(asData.substeps, asData.substep))
 				{
-					var asi = stepsData["impress-" + activeStep.id].index;
-					var rsi = stepsData["impress-" + realStep.id].index;
-					moveImmediate = asi < rsi ? next : prev;
+					console.log('moving from substep ' + asData.substep + ' to ' + (asData.substep + (forward ? 1 : -1)));
+					as.classList.remove("substep" + asData.substep);
+					asData.substep += (forward ? 1 : -1); // move forward or backward
+					if (asData.substep > 0 && asData.substep <= asData.substeps) 
+					{
+						options.onSubStepEnter(as, asData.substep, forward);
+						as.classList.add("substep" + asData.substep);
+					}
+					return true;
+				}
+				else
+				{
+					as.classList.remove("active");
+					body.classList.remove("impress-on-" + as.id);
+					if (asData.group) body.classList.remove("impress-group-" + asData.group);
+					asData.substep = forward ? 1 : asData.substeps;
+					
+					// LLD - set up the direction we're supposed to go in if we are to move
+					if (moveImmediate !== undefined) moveImmediate = forward ? next : prev;
 				}
             }
             el.classList.add("active");
             
             body.classList.add("impress-on-" + el.id);
-			if (el.dataset.group) body.classList.add("impress-group-" + el.dataset.group); //LLD
+			if (step.group) body.classList.add("impress-group-" + step.group); //LLD
+			if (step.substeps > 0) { //LLD
+				step.substep = forward ? 1 : parseInt(step.substeps);
+				el.classList.add("substep" + step.substep);
+				options.onSubStepEnter(el, step.substep, forward);
+				console.log('init substeps at ' + step.substep);
+			}
             
             // compute target state of the canvas based on given step
             var target = {

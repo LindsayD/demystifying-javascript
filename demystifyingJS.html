@@ -368,35 +368,53 @@
 		</div>
 	</div>
 	
-	<div id="protochain" class="step only-present" data-group="prototype" data-x="-200" data-y="-1025" data-z="-800">
-			<div class="curve"></div>
-			<div class="g-object pc1 instance-color">
-				<div>I:meme</div>
-				<ul>
-				<li>name</li>
-				<li>graphic</li>
-				<li>assemble</li>
-				<li>...</li>
-				</ul>
+	<div id="protochain" class="step only-present" data-group="prototype" data-substeps="6" data-x="-200" data-y="-1025" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>The Chain Gang</div>
+				<img src="images/code-protochain1.png" />
+				
+				<div class="g-object pc1 instance-color">
+					<div>I:meme</div>
+					<ul>
+					<li>name</li>
+					<li>graphic</li>
+					<li>assemble</li>
+					<li>...</li>
+					</ul>
+				</div>
+				<div class="g-object pc2 trait-color">
+					<div>P:TextMeme</div>
+					<ul>
+					<li>topText</li>
+					<li>bottomText</li>
+					<li>fontSize</li>
+					<li>...</li>
+					</ul>
+				</div>
+				<div class="g-object pc3 trait-color">
+					<div>P:Meme</div>
+					<ul>
+					<li>author</li>
+					<li>name</li>
+					<li>variations</li>
+					<li>...</li>
+					</ul>
+				</div>
+				<div class="g-object pc4 trait-color">
+					<div>P:Object</div>
+					<ul>
+					<li>toString</li>
+					<li style="font-size: 80%;padding: 15px 10px;">hasOwnProperty</li>
+					<li style="font-size: 80%;padding: 15px 10px;">isPrototypeOf</li>
+					<li>...</li>
+					</ul>
+				</div>
+				<div class="curve curve1"></div>
+				<div class="curve curve2"></div>
+				<div class="curve curve3"></div>
 			</div>
-			<div class="g-object pc2 trait-color">
-				<div>P:TextMeme</div>
-				<ul>
-				<li>topText</li>
-				<li>bottomText</li>
-				<li>font</li>
-				<li>...</li>
-				</ul>
-			</div>
-			<div class="g-object pc3 trait-color">
-				<div>P:Meme</div>
-				<ul>
-				<li>author</li>
-				<li>name</li>
-				<li>variations</li>
-				<li>...</li>
-				</ul>
-			</div>
+		</div>
 	</div>
 	
 	<div id="prototype-chain" data-group="objects" style="display:none" class="stepdiabled prototypechain only-present" data-x="-800" data-y="-1500" data-z="-3500" data-rotate-z="90">
@@ -415,7 +433,7 @@
 	
 	<div id="concepts2" class="step" data-mimic="concepts" data-x="0" data-y="-1500"></div>
 	
-	<div id="contexts1" class="step" data-group="contexts" data-x="400" data-y="-1500" data-rotate-z="-90">
+	<div id="contexts1" class="step only-present" data-group="contexts" data-x="400" data-y="-1500" data-rotate-z="-90">
 		<div class="title">Contexts</div>
 		<div class="context global-context">
 			<div class="c-name">Global Context: SCRIPT</div>
@@ -440,7 +458,7 @@
 		</div>
     </div>
 	
-	<div id="contexts1" class="step" data-group="contexts" data-x="400" data-y="-1500" data-rotate-z="-90">
+	<div id="contexts1" class="step only-present" data-group="contexts" data-x="400" data-y="-1500" data-rotate-z="-90">
 		<div class="title">Contexts</div>
 		<div class="context global-context">
 			<div class="c-name">Global Context: SCRIPT</div>
@@ -459,13 +477,30 @@
 
 <script src="js/impress.js"></script>
 <script>impress(undefined, {
-	onStepEnter: function(step) { if (window[step.id + 'Action'] !== undefined) window[step.id + 'Action'](step); }
+	onStepEnter: function(step) { 
+		var method = step.id + 'Action';
+		if (window[method] !== undefined) window[method](step); 
+	},
+	onSubStepEnter: function(step, substepIndex, forward) { 
+		var method = step.id + 'ActionSub' + substepIndex;
+		if (window[method] !== undefined) window[method](step, substepIndex, forward);
+	}
 }).init();
 
-function obj6Action(step)
-{
-	var to = $('#obj6 .type-object');
-	console.log('in obj6 action ' + to.style.top);
+var protochainActionSub2 =
+	protochainActionSub3 = 
+	protochainActionSub4 =
+	protochainActionSub5 =
+function(step, index, forward) {
+	var els = $$('#protochain .g-object li, #protochain .curve');
+
+	for (var i = 0; i < els.length; i ++) {
+		var el = els[i],
+			newOne = el.cloneNode(true);
+		el.parentNode.replaceChild(newOne, el);
+	}
+	
+	$('#protochain img').src = 'images/code-protochain' + (index - 1) + '.png';
 }
 
 var $ = function ( selector, context ) {
@@ -473,22 +508,17 @@ var $ = function ( selector, context ) {
         return context.querySelector(selector);
 };
 
-function createLine(x1,y1, x2,y2){
-    var length = Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
-  var angle  = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
-  var transform = 'rotate('+angle+'deg)';
+// `arraify` takes an array-like object and turns it into real Array
+// to make all the Array.prototype goodness available.
+var arrayify = function ( a ) {
+	return [].slice.call( a );
+};
 
-    var line = $('<div>')
-        .appendTo('#impress')
-        .addClass('line')
-        .css({
-          'position': 'absolute',
-          'transform': transform
-        })
-        .width(length)
-        .offset({left: x1, top: y1});
-
-    return line;
+// `$$` return an array of elements for given CSS `selector` in the `context` of
+// the given element or whole document.
+var $$ = function ( selector, context ) {
+	context = context || document;
+	return arrayify( context.querySelectorAll(selector) );
 }
 
 </script>

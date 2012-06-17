@@ -593,17 +593,11 @@ to {top:50px; left: 0px; -webkit-transform: scale(0.8); }
 	-moz-animation: traitobj 1s ease 0.5s 1;
 	-o-animation: traitobj 1s ease 0.5s 1;
 	
-	-webkit-transition: opacity 1s;
-    -moz-transition:    opacity 1s;
-    -ms-transition:     opacity 1s;
-    -o-transition:      opacity 1s;
-    transition:         opacity 1s;
-	
-	 -webkit-transition-delay: 0.5s;
-    -moz-transition-delay:    0.5s;
-    -ms-transition-delay:     0.5s;
-    -o-transition-delay:      0.5s;
-    transition-delay:         0.5s;
+	-webkit-transition: opacity 1s linear 0.5s;
+    -moz-transition:    opacity 1s linear 0.5s;
+    -ms-transition:     opacity 1s linear 0.5s;
+    -o-transition:      opacity 1s linear 0.5s;
+    transition:         opacity 1s linear 0.5s;
 }
 
 @keyframes traitobj
@@ -699,62 +693,38 @@ to {top:50px; left: 470px; -webkit-transform: scale(0.8);}
 #obj4.active .g-object li:nth-child(1) {
 	opacity: 1;
 
-    -webkit-transition: opacity 1s;
-    -moz-transition:    opacity 1s;
-    -ms-transition:     opacity 1s;
-    -o-transition:      opacity 1s;
-    transition:         opacity 1s;
-	
-	 -webkit-transition-delay: 0.5s;
-    -moz-transition-delay:    0.5s;
-    -ms-transition-delay:     0.5s;
-    -o-transition-delay:      0.5s;
-    transition-delay:         0.5s;
+    -webkit-transition: opacity 1s linear 0.25s;
+    -moz-transition:    opacity 1s linear 0.25s;
+    -ms-transition:     opacity 1s linear 0.25s;
+    -o-transition:      opacity 1s linear 0.25s;
+    transition:         opacity 1s linear 0.25s;
 }
 #obj4.active .g-object li:nth-child(2) {
 	opacity: 1;
 
-    -webkit-transition: opacity 1s;
-    -moz-transition:    opacity 1s;
-    -ms-transition:     opacity 1s;
-    -o-transition:      opacity 1s;
-    transition:         opacity 1s;
-	
-	 -webkit-transition-delay: 0.5s;
-    -moz-transition-delay:    0.5s;
-    -ms-transition-delay:     0.5s;
-    -o-transition-delay:      0.5s;
-    transition-delay:         0.5s;
+    -webkit-transition: opacity 1s linear 0.5s;
+    -moz-transition:    opacity 1s linear 0.5s;
+    -ms-transition:     opacity 1s linear 0.5s;
+    -o-transition:      opacity 1s linear 0.5s;
+    transition:         opacity 1s linear 0.5s;
 }
 #obj4.active .g-object li:nth-child(3) {
 	opacity: 1;
 
-    -webkit-transition: opacity 1s;
-    -moz-transition:    opacity 1s;
-    -ms-transition:     opacity 1s;
-    -o-transition:      opacity 1s;
-    transition:         opacity 1s;
-	
-	 -webkit-transition-delay: 0.75s;
-    -moz-transition-delay:    0.75s;
-    -ms-transition-delay:     0.75s;
-    -o-transition-delay:      0.75s;
-    transition-delay:         0.75s;
+    -webkit-transition: opacity 1s linear 0.75s;
+    -moz-transition:    opacity 1s linear 0.75s;
+    -ms-transition:     opacity 1s linear 0.75s;
+    -o-transition:      opacity 1s linear 0.75s;
+    transition:         opacity 1s linear 0.75s;
 }
 #obj4.active .g-object li:nth-child(4) {
 	opacity: 1;
 
-    -webkit-transition: opacity 1s;
-    -moz-transition:    opacity 1s;
-    -ms-transition:     opacity 1s;
-    -o-transition:      opacity 1s;
-    transition:         opacity 1s;
-	
-	 -webkit-transition-delay: 1s;
-    -moz-transition-delay:    1s;
-    -ms-transition-delay:     1s;
-    -o-transition-delay:      1s;
-    transition-delay:         1s;
+    -webkit-transition: opacity 1s linear 1s;
+    -moz-transition:    opacity 1s linear 1s;
+    -ms-transition:     opacity 1s linear 1s;
+    -o-transition:      opacity 1s linear 1s;
+    transition:         opacity 1s linear 1s;
 }
 
 .type-object-details div.title {
@@ -774,33 +744,303 @@ to {top:50px; left: 470px; -webkit-transform: scale(0.8);}
 }
 
 #protochain  .curve {
+	opacity: 0;
 	position: absolute;
-	border-width: 10px 0 0 0;
+	border-width: 15px 0 0 0;
 	border-style: solid;
-    border-color: #f00 transparent transparent transparent;
+    border-color: #791f83 transparent transparent transparent;
 	-moz-border-radius: 100%;
     border-radius: 100%;
 	height: 80px;
 	width: 150px;
-	top: 40px;
-	left: 200px;
+	top: 450px;
+	-moz-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+#protochain .curve1 {
+	left: 110px;
+}
+
+#protochain .curve2 {
+	left: 365px;
+}
+
+#protochain .curve3 {
+	left: 615px;
 }
 
 #protochain .g-object {
 	position: absolute;
-	top: 50px !important;
+	top: 350px !important;
 	-moz-transform: scale(0.7);
 	-webkit-transform: scale(0.7);
 	transform: scale(0.7);	
 }
 #protochain .pc1 {
-	left: 0;
+	left: -125px;
 }
 #protochain .pc2 {
-	left: 300px;
+	left: 125px;
 }
 #protochain .pc3 {
-	left: 650px;
+	left: 375px;
+}
+#protochain .pc4 {
+	left: 625px;
+}
+
+#protochain.active.substep2 .pc1 li:nth-child(1),
+#protochain.active.substep2 .pc1 li:nth-child(2),
+#protochain.active.substep2 .pc1 li:nth-child(3),
+
+#protochain.active.substep3 .pc1 li:nth-child(1),
+#protochain.active.substep3 .pc1 li:nth-child(2),
+#protochain.active.substep3 .pc1 li:nth-child(3),
+
+#protochain.active.substep5 .pc1 li:nth-child(1),
+#protochain.active.substep5 .pc1 li:nth-child(2),
+#protochain.active.substep5 .pc1 li:nth-child(3),
+
+#protochain.active.substep3 .pc2 li:nth-child(1),
+#protochain.active.substep3 .pc2 li:nth-child(2),
+#protochain.active.substep3 .pc2 li:nth-child(3),
+
+#protochain.active.substep5 .pc2 li:nth-child(1),
+#protochain.active.substep5 .pc2 li:nth-child(2),
+#protochain.active.substep5 .pc2 li:nth-child(3),
+
+#protochain.active.substep5 .pc3 li:nth-child(1),
+#protochain.active.substep5 .pc3 li:nth-child(2),
+#protochain.active.substep5 .pc3 li:nth-child(3)
+{
+	-webkit-animation: protochainprop 0.5s ease 2 alternate;
+	-moz-animation: protochainprop 0.5s ease 2 alternate;
+	-o-animation: protochainprop 0.5s ease 2 alternate;
+}
+
+#protochain.active.substep2 .pc1 li:nth-child(1),
+#protochain.active.substep3 .pc1 li:nth-child(1),
+#protochain.active.substep5 .pc1 li:nth-child(1) 
+{
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	-o-animation-delay: 0.5s;
+}
+
+#protochain.active.substep2 .pc1 li:nth-child(2),
+#protochain.active.substep3 .pc1 li:nth-child(2),
+#protochain.active.substep5 .pc1 li:nth-child(2)
+{
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	-o-animation-delay: 1s;
+}
+
+#protochain.active.substep2 .pc1 li:nth-child(3),
+#protochain.active.substep3 .pc1 li:nth-child(3),
+#protochain.active.substep5 .pc1 li:nth-child(3) 
+{
+	-webkit-animation-delay: 1.5s;
+	-moz-animation-delay: 1.5s;
+	-o-animation-delay: 1.5s;
+}
+
+#protochain.active.substep3 .pc2 li:nth-child(1),
+#protochain.active.substep5 .pc2 li:nth-child(1)  
+{
+	-webkit-animation-delay: 2.5s;
+	-moz-animation-delay: 2.5s;
+	-o-animation-delay: 2.5s;
+}
+
+#protochain.active.substep3 .pc2 li:nth-child(2),
+#protochain.active.substep5 .pc2 li:nth-child(2) 
+{
+	-webkit-animation-delay: 3s;
+	-moz-animation-delay: 3s;
+	-o-animation-delay: 3s;
+}
+
+#protochain.active.substep3 .pc2 li:nth-child(3),
+#protochain.active.substep5 .pc2 li:nth-child(3)  
+{
+	-webkit-animation-delay: 3.5s;
+	-moz-animation-delay: 3.5s;
+	-o-animation-delay: 3.5s;
+}
+
+#protochain.active.substep5 .pc3 li:nth-child(1) 
+{
+	-webkit-animation-delay: 4.5s;
+	-moz-animation-delay: 4.5s;
+	-o-animation-delay: 4.5s;
+}
+
+#protochain.active.substep5 .pc3 li:nth-child(2) 
+{
+	-webkit-animation-delay: 5s;
+	-moz-animation-delay: 5s;
+	-o-animation-delay: 5s;
+}
+
+#protochain.active.substep5 .pc3 li:nth-child(3) 
+{
+	-webkit-animation-delay: 5.5s;
+	-moz-animation-delay: 5.5s;
+	-o-animation-delay: 5.5s;
+}
+
+#protochain.active.substep2 .pc2 li:nth-child(1) 
+{
+	background-color: #791f83;
+	color: #fff; 
+	
+	-webkit-animation: protochainpropfoundstart 2.5s 0s 1, protochainpropfound 2s ease 2.5s 1 normal;
+	-moz-animation: protochainpropfoundstart 2.5s 0s 1, protochainpropfound 2s ease 2.5s 1 normal;
+	-o-animation: protochainpropfoundstart 2.5s 0s 1, protochainpropfound 2s ease 2.5s 1 normal;
+}
+
+#protochain.active.substep3 .pc3 li:nth-child(1) 
+{
+	background-color: #791f83;
+	color: #fff; 
+	
+	-webkit-animation: protochainpropfoundstart 4.5s 0s 1, protochainpropfound 2s ease 4.5s 1 normal;
+	-moz-animation: protochainpropfoundstart 4.5s 0s 1, protochainpropfound 2s ease 4.5s 1 normal;
+	-o-animation: protochainpropfoundstart 4.5s 0s 1, protochainpropfound 2s ease 4.5s 1 normal;
+}
+
+#protochain.active.substep4 .pc1 li:nth-child(1) 
+{
+	background-color: #791f83;
+	color: #fff; 
+	
+	-webkit-animation: protochainpropfoundstart 0.5s 0s 1, protochainpropfound 2s ease 0.5s 1 normal;
+	-moz-animation: protochainpropfoundstart 0.5s 0s 1, protochainpropfound 2s ease 0.5s 1 normal;
+	-o-animation: protochainpropfoundstart 0.5s 0s 1, protochainpropfound 2s ease 0.5s 1 normal;
+}
+
+#protochain.active.substep5 .pc4 li:nth-child(1) 
+{
+	background-color: #791f83;
+	color: #fff; 
+	
+	-webkit-animation: protochainpropfoundstart 6.5s 0s 1, protochainpropfound 2s ease 6.5s 1 normal;
+	-moz-animation: protochainpropfoundstart 6.5s 0s 1, protochainpropfound 2s ease 6.5s 1 normal;
+	-o-animation: protochainpropfoundstart 6.5s 0s 1, protochainpropfound 2s ease 6.5s 1 normal;
+}
+
+#protochain.active.substep2 .curve1,
+#protochain.active.substep3 .curve1,
+#protochain.active.substep5 .curve1
+{
+	opacity: 0;
+	
+	-webkit-animation: protochaincurve 0.5s ease 2s 2 alternate;
+	-moz-animation: protochaincurve 0.5s ease 2s 2 alternate;
+	-o-animation: protochaincurve 0.5s ease 2s 2 alternate;
+}
+
+#protochain.active.substep3 .curve2,
+#protochain.active.substep5 .curve2
+{
+	opacity: 0;
+	
+	-webkit-animation: protochaincurve 0.5s ease 4s 2 alternate;
+	-moz-animation: protochaincurve 0.5s ease 4s 2 alternate;
+	-o-animation: protochaincurve 0.5s ease 4s 2 alternate;
+}
+
+#protochain.active.substep5 .curve3
+{
+	opacity: 0;
+	
+	-webkit-animation: protochaincurve 0.5s ease 6s 2 alternate;
+	-moz-animation: protochaincurve 0.5s ease 6s 2 alternate;
+	-o-animation: protochaincurve 0.5s ease 6s 2 alternate;
+}
+
+@keyframes protochainprop
+{
+from { background-color: #fff; }
+to { background-color: #791f83; }
+}
+
+@-moz-keyframes protochainprop /* Firefox */
+{
+from { background-color: #fff; }
+to { background-color: #791f83; }
+}
+
+@-webkit-keyframes protochainprop /*Safari and Chrome */
+{
+from { background-color: #fff; }
+to {  background-color: #791f83; }
+}
+
+
+
+@keyframes protochainpropfoundstart
+{
+0% { color: #fff; background-color: #791f83; }
+5% { color: #000; background-color: #fff; }
+100% { color: #000; background-color: #fff; }
+}
+
+@-moz-keyframes protochainpropfoundstart /* Firefox */
+{
+0% { color: #fff; background-color: #791f83; }
+5% { color: #000; background-color: #fff; }
+100% { color: #000; background-color: #fff; }
+}
+
+@-webkit-keyframes protochainpropfoundstart /*Safari and Chrome */
+{
+0% { color: #fff; background-color: #791f83; }
+5% { color: #000; background-color: #fff; }
+100% { color: #000; background-color: #fff; }
+}
+
+@keyframes protochainpropfound
+{
+0% { color: #000; background-color: #fff; }
+30% { color: #fff; background-color: #f00; }
+100%{ color: #fff; background-color: #791f83; }
+}
+
+@-moz-keyframes protochainpropfound /* Firefox */
+{
+0% { color: #000; background-color: #fff; }
+30% { color: #fff; background-color: #f00; }
+100%{ color: #fff; background-color: #791f83; }
+}
+
+@-webkit-keyframes protochainpropfound /*Safari and Chrome */
+{
+0% {color: #000; background-color: #fff; }
+30% { color: #fff; background-color: #f00; }
+100%{ color: #fff; background-color: #791f83; }
+}
+
+
+@keyframes protochaincurve
+{
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+@-moz-keyframes protochaincurve /* Firefox */
+{
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+@-webkit-keyframes protochaincurve /*Safari and Chrome */
+{
+from { opacity: 0; }
+to { opacity: 1; }
 }
 
 .prototypechain.future{

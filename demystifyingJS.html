@@ -425,27 +425,38 @@
 	
 	<div id="concepts2" class="step" data-mimic="concepts" data-x="0" data-y="-1500"></div>
 	
-	<div id="contexts1" class="step only-present" data-group="contexts" data-x="400" data-y="-1500" data-rotate-z="-90">
-		<div class="title">Contexts</div>
-		<div class="context global-context">
-			<div class="c-name">Global Context: SCRIPT</div>
-			<div class="co-name">SCRIPT</div>
+	<div id="contexts1" class="step only-group-contexts" data-isprop="true" data-group="contexts" data-x="700" data-y="-1900" data-rotate-z="-90">
+		<img src="images/code-contexts.png" />
+    </div>
+	
+	<div id="contexts1a" class="step" data-group="contexts" data-x="500" data-y="-1900" data-rotate-z="-90"></div>
+	<div id="contexts16" class="step" data-group="contexts" data-x="900" data-y="-1900" data-rotate-z="-90"></div>
+	
+	<div id="contexts2" class="step only-present smoothfade" data-substeps="2" data-group="contexts" data-x="600" data-y="-1500" data-rotate-z="-90" data-scale="1.75">
+		<div class="c-queue">
+			<div class="context global-context">
+				<div class="c-name">Global Context: SCRIPT</div>
+			</div>
+			<div class="variable-object">
+				<div class="objtype">Variable Object</div>
+				<ul>
+					<li class="var"><label>memes</label></li>
+					<li class="var"><label>currentMemeIndex</label></li>
+					<li class="func"><label>Meme</label></li>
+					<li class="func"><label>buildMemes</label></li>
+					<li class="func"><label>displayMemes</label></li>
+				</ul>
+			</div>
+		</div>
+    </div>
+	
+	<div id="contexts3" class="step only-present smoothfade" data-group="contexts" data-x="600" data-y="-1500" data-rotate-z="-90" data-scale="1.75">
+		<div class="c-queue">
+			<div class="context global-context">
+				<div class="c-name">Global Context: SCRIPT</div>
+			</div>
 			<div class="context function-context">
 				<div class="c-name">Function Context: Meme</div>
-					<div class="co-name">Function: Meme</div>
-					<div class="context function-context">
-						<div class="c-name">Function Context: display</div>
-						<div class="co-name">Function: display</div>
-					</div>
-					<div class="context function-context">
-						<div class="c-name">Function Context: onDisplay</div>
-						<div class="co-name">Function: onDisplay</div>
-					</div>
-					<div class="context function-context">
-						<div class="c-name">Function Context: getMemes</div>
-						<div class="co-name">Function: getMemes</div>
-					</div>
-				</div>
 			</div>
 		</div>
     </div>
@@ -464,24 +475,6 @@
 		if (window[method] !== undefined) window[method](step, substepIndex, forward);
 	}
 }).init();
-
-var objdataActionSub3 = function() {
-	var els = $$('#obj-data ul li');
-	var count = els.length;
-	
-	function update(index) {
-		if (index < count)
-		{
-			els[index].innerHTML = '<label><span>Key:</span></label>Value';
-			index ++;
-			setTimeout(function() {
-				update(index);
-			}, 100);
-		}
-	};
-	
-	update(0);
-}
 
 var protochainActionSub2 =
 	protochainActionSub3 = 

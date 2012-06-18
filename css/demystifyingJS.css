@@ -6,6 +6,8 @@
     doesn't do any harm and gives us a fresh start.
 */
 
+/* #3c115a */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -90,6 +92,10 @@ body.impress-group-objects {
     -moz-transition: background-color 500ms ease-out 200ms;
     -o-transition: background-color 500ms ease-out 200ms;
     transition: background-color 500ms ease-out 200ms;*/
+}
+
+body.impress-group-contexts {
+	background-color: #A086CE;
 }
 
 body.impress-group-instance {
@@ -237,12 +243,14 @@ a:focus {
 /* if we want steps that only show when they are part of the active group... */
 .impress-enabled  .step.only-group-instance,
 .impress-enabled  .step.only-group-constructor,
-.impress-enabled  .step.only-group-prototype
+.impress-enabled  .step.only-group-prototype,
+.impress-enabled  .step.only-group-contexts
 { opacity: 0; }
 
 .impress-enabled.impress-group-instance .step.only-group-instance,
 .impress-enabled.impress-group-constructor .step.only-group-constructor,
-.impress-enabled.impress-group-prototype .step.only-group-prototype 
+.impress-enabled.impress-group-prototype .step.only-group-prototype,
+.impress-enabled.impress-group-contexts .step.only-group-contexts 
 { opacity: 1; }
 
 div.line{
@@ -394,10 +402,12 @@ div.line{
 	position: absolute;
 }
 
-.impress-group-objects #concepts {
+.impress-group-objects #concepts,
+.impress-group-contexts #concepts {
 	opacity: 0.8;
 }
-.impress-group-objects .objects {
+.impress-group-objects .objects,
+.impress-group-contexts .contexts {
 	color: #fff;
 	opacity: 1;
 	-webkit-transition: color 500ms ease-out 200ms; /* property duration timing-function delay */
@@ -1260,26 +1270,86 @@ to { opacity: 1; }
 	opacity: 1;
 }
 
-#contexts1 .context
-{
-	border: 2px solid #000;
-	padding: 20px;
+.impress-group-contexts .c-queue{
+	position: absolute;
+	width: 400px;
+	top:-230px;
+	left: 0;
 }
-#contexts1 .c-name
+
+.impress-group-contexts  div.context
+{
+	border: 2px solid rgba(0,0,0,0.75);
+	padding: 10px;
+	margin-bottom: 5px;
+	font-size: 70%;
+	-moz-border-radius: 20px;
+    border-radius: 20px;
+}
+.impress-group-contexts  div.c-name
 {
 	padding: 5px;
-	color: #ddd;
+	color: #000;
 }
 
-#contexts1 .global-context
+.impress-group-contexts  .global-context
 {
-	background: #fff;
+	background-color: rgba(255,255,255, 0.75);
 }
 
-#contexts1 .function-context
+.impress-group-contexts  .function-context
 {
 	background: #ddf;
 }
+
+.impress-group-contexts .variable-object {
+	position: absolute;
+	width: 350px;
+	background-color: #fff;
+	opacity: 1;
+	font-size: 70%;
+	font-family: 'Consolas';
+}
+.impress-group-contexts .variable-object ul
+{
+	width: 300px;
+	margin-left: 50px;
+}
+.impress-group-contexts .variable-object li
+{
+	border: 2px solid #fff;
+	padding: 10px;
+}
+.impress-group-contexts .variable-object li.var
+{
+	background-color: #ddf;
+}
+.impress-group-contexts .variable-object li.func
+{
+	background-color: #dff;
+}
+.impress-group-contexts .variable-object div.objtype
+{
+	position: absolute;
+	top: 115px;
+	left: -150px;
+	width: 100%;
+	text-align: center;
+	font-size: 1.1em;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform:    rotate(-90deg);
+    -ms-transform:     rotate(-90deg);
+    -o-transform:      rotate(-90deg);
+    transform:         rotate(-90deg);
+}
+#contexts2.substep1 .variable-object { opacity: 0; }
+#contexts2.substep2 .variable-object {
+	top: 10px;
+	left: 250px;
+}
+
+
+
 
 .slide q {
     display: block;

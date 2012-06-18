@@ -29,13 +29,10 @@
 
 <div id="impress">
 
-	<div id="start" class="step" data-x="0" data-y="0" data-scale="4">
+	<div id="start" class="step" data-substeps="2" data-x="0" data-y="0" data-scale="4">
+		<div class="heart"></div>
         <div class="title">Demystifying Javascript</div>
 		<div class="blurb">How I learned to stop worrying and love the Prototype.</div>
-    </div>
-	
-	<div id="start2" class="step" data-x="0" data-y="0" data-z="-10" data-scale="4">
-        <div class="heart"></div>
     </div>
 	
 	<div id="who" class="step" data-x="0" data-y="0" data-rotate-x="0" data-rotate-y="-90">
@@ -64,20 +61,29 @@
 		<div class="contexts">Contexts</div>
     </div>
 	
-	<div id="obj-data" class="step only-present" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+	<div id="obj-data" class="step only-present" data-substeps="2" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
 		<div class="substep">
-			<div class="g-property">
-			<span>Data</span>
-			</div>
+			<ul>
+			<li class="data data1"><label><span>Name:</span></label>Lindsay Donaghe</li>
+			<li class="data data4"><label><span>Email:</span></label>ldonaghe@godaddy.com</li>
+			<li class="data data6"><label><span>Phone:</span></label>602.325.3318</li>
+			<li class="data data3"><label><span>Birthdate:</span></label>09/07/1975</li>
+			<li class="data data2"><label><span>Favorite Color:</span></label>purple</li>
+			<li class="data data7"><label><span>Favorite Animal:</span></label>birds</li>
+			</ul>
 		</div>
     </div>
 	
-	<div id="obj1" class="step only-present" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+	<div id="obj-data2" class="step only-present" data-substeps="2" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
 		<div class="substep">
-			<div class="g-property">
-			<span>Key</span>
-			<span>Value</span>
-			</div>
+			<ul>
+			<li class="data data1"><label><span>Key:</span></label>Value</li>
+			<li class="data data4"><label><span>Key:</span></label>Value</li>
+			<li class="data data6"><label><span>Key:</span></label>Value</li>
+			<li class="data data3"><label><span>Key:</span></label>Value</li>
+			<li class="data data2"><label><span>Key:</span></label>Value</li>
+			<li class="data data7"><label><span>Key:</span></label>Value</li>
+			</ul>
 		</div>
     </div>
 	
@@ -111,8 +117,8 @@
 		</div>
     </div>
 	
-	<div id="obj5" class="step only-present" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
-		<div class="substep">
+	<div id="obj5" class="step only-present smoothfade" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+		<div class="substep" style="margin-top: 20px;">
 			<div class="g-object type-object">
 				<div>Constructor</div>
 				<ul>
@@ -143,13 +149,12 @@
 		</div>
     </div>
 	
-	<div id="obj6" class="step only-present" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
-		<div class="substep">
-			<div class="curve1"></div><div class="curve2"></div><div class="curve3"></div>
+	<div id="obj6" class="step only-present smoothfade" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+		<div class="substep" style="margin-top: 20px;">
 			<div class="g-object type-object">
 				<div>Constructor</div>
 				<ul>
-				<li class="trait-color">Prototype</li>
+				<li class="trait">Prototype</li>
 				<li>Property</li>
 				<li>Property</li>
 				<li>Property</li>
@@ -158,7 +163,7 @@
 			<div class="g-object trait-object">
 				<div>Prototype</div>
 				<ul>
-				<li class="type-color">Constructor</li>
+				<li class="type">Constructor</li>
 				<li>Property</li>
 				<li>Property</li>
 				<li>Property</li>
@@ -167,12 +172,13 @@
 			<div class="g-object instance-object">
 				<div>Instance</div>
 				<ul>
-				<li class="type-color">Constructor</li>
+				<li class="type">Constructor</li>
 				<li>Property</li>
 				<li>Property</li>
 				<li>Property</li>
 				</ul>
 			</div>
+			<div class="curve1"></div><div class="curve2"></div><div class="curve3"></div>
 		</div>
     </div>
 	
@@ -417,20 +423,6 @@
 		</div>
 	</div>
 	
-	<div id="prototype-chain" data-group="objects" style="display:none" class="stepdiabled prototypechain only-present" data-x="-800" data-y="-1500" data-z="-3500" data-rotate-z="90">
-		<div>Prototype Chain</div>
-		<div>Can we find the property in the instance?</div>
-			<div>Yes - Return it!</div>
-			<div>No - Check the <span class="pcnext">constructor's prototype.</span></div>
-    </div>
-	
-	<div id="prototype-chain-2" data-group="objects" style="display:none" class="stepdisabled prototypechain only-present" data-x="-920" data-y="-1400" data-z="-3000" data-rotate-z="90">
-		<div style="padding-top:175px;">Can we find the property in the</div>
-			<div style="font-size: 170%;background: rgb(215, 215, 215);">constructor's prototype?</div>
-			<div>Yes - Return it!</div>
-			<div>No - Check the <span class="pcnext">constructor's prototype's constructor.</span></div>
-    </div>
-	
 	<div id="concepts2" class="step" data-mimic="concepts" data-x="0" data-y="-1500"></div>
 	
 	<div id="contexts1" class="step only-present" data-group="contexts" data-x="400" data-y="-1500" data-rotate-z="-90">
@@ -457,40 +449,45 @@
 			</div>
 		</div>
     </div>
-	
-	<div id="contexts1" class="step only-present" data-group="contexts" data-x="400" data-y="-1500" data-rotate-z="-90">
-		<div class="title">Contexts</div>
-		<div class="context global-context">
-			<div class="c-name">Global Context: SCRIPT</div>
-		</div>
-		<div class="stack ">
-			
-		</div>
-		<div class="code">
-			
-		</div>
-    </div>
 
-	<div id="overview" class="step" data-x="0" data-y="-500" data-scale="6">
-    </div>
+	<div id="overview" class="step" data-x="0" data-y="-500" data-scale="6"></div>
 </div>
 
 <script src="js/impress.js"></script>
 <script>impress(undefined, {
 	onStepEnter: function(step) { 
-		var method = step.id + 'Action';
+		var method = step.id + 'Action'.replace('-','');
 		if (window[method] !== undefined) window[method](step); 
 	},
 	onSubStepEnter: function(step, substepIndex, forward) { 
-		var method = step.id + 'ActionSub' + substepIndex;
+		var method = (step.id + 'ActionSub' + substepIndex).replace('-','');
 		if (window[method] !== undefined) window[method](step, substepIndex, forward);
 	}
 }).init();
+
+var objdataActionSub3 = function() {
+	var els = $$('#obj-data ul li');
+	var count = els.length;
+	
+	function update(index) {
+		if (index < count)
+		{
+			els[index].innerHTML = '<label><span>Key:</span></label>Value';
+			index ++;
+			setTimeout(function() {
+				update(index);
+			}, 100);
+		}
+	};
+	
+	update(0);
+}
 
 var protochainActionSub2 =
 	protochainActionSub3 = 
 	protochainActionSub4 =
 	protochainActionSub5 =
+	protochainActionSub6 =
 function(step, index, forward) {
 	var els = $$('#protochain .g-object li, #protochain .curve');
 

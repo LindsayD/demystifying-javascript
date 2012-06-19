@@ -52,7 +52,7 @@
 		</div>
     </div>
 	
-	<div id="history" class="step" data-x="-1200" data-y="-2000">
+	<div style="display:none;" id="history" class="step-no" data-x="-1200" data-y="-2000">
         <h1>Long, long ago, in 1995...</h1>
     </div>
 	
@@ -425,42 +425,263 @@
 	
 	<div id="concepts2" class="step" data-mimic="concepts" data-x="0" data-y="-1500"></div>
 	
-	<div id="contexts1" class="step only-group-contexts" data-isprop="true" data-group="contexts" data-x="700" data-y="-1900" data-rotate-z="-90">
+	<div id="contexts-intro" class="step only-present" data-substeps="11" data-group="contexts" data-x="375" data-y="-1450" data-rotate-z="-90">
+		<div class="context context-exec">
+			<div class="c-name">Execution Context
+				<span class="c-for-method">for Function defined <span class="qualifier">as a Method</span></span>
+				<span class="c-for-funcinfunc">for Function defined <span class="qualifier">in a Function</span></span>
+				<span class="c-for-global">for Function defined <span class="qualifier">in Global</span></span>
+			</div>
+		</div>
+		<div class="scope-object">
+			<div class="s-name">Scope</div>
+		</div>
+		<div class="variable-object">
+			<div class="objtype objtype-v">Variable Object</div>
+			<div class="objtype objtype-a">Activation Object</div>
+			<ul>
+				<li class="var"><label>index:</label><span class="proptype-v">undefined</span><span class="proptype-a">0</span></li>
+				<li class="var"><label>title:</label><span class="proptype-v">undefined</span><span class="proptype-a">''</span></li>
+				<li class="var"><label>arr:</label><span class="proptype-v">undefined</span><span class="proptype-a">[]</span></li>
+				<li class="func"><label>foo:</label><span class="proptype-v">undefined</span><span class="proptype-a">() {...}</span><span class="f-scope">[[scope]]</span></li>
+				<li class="func"><label>bar:</label><span class="proptype-v">undefined</span><span class="proptype-a">(index) {...}</span><span class="f-scope">[[scope]]</span></li>
+				<li class="args"><label>[arguments]</label></li>
+			</ul>
+		</div>
+		<div class="scopechain-object"><label>Scope Chain:</label> Caller's <span>[[scope]]</span></div>
+		<div class="scopecurve1"></div><div class="scopecurve2"></div><div class="scopecurve3"></div>
+		<div class="this-object">
+			<div class="t-name">this</div>
+			<div class="this-content-mystery">?</div>
+			<div class="this-content-method">The object the method is a property of.</div>
+			<div class="this-content-funcinfunc">The object the calling context's <span style="font-family:Consolas">this</span> refers to.</div>
+			<div class="this-content-global">The<br/>Global Object (<span style="font-family:Consolas">window</span>).</div>
+		</div>
+		<div class="this-object-example">
+			<div class="this-example-method"><img src="images/code-contextex1.png" /></div>
+			<div class="this-example-funcinfunc"><img src="images/code-contextex2.png" /></div>
+			<div class="this-example-global"><img src="images/code-contextex3.png" /></div>
+		</div>
+    </div>
+	
+	<div id="contexts-global" class="step only-present smoothfade" data-substeps="5" data-group="contexts" data-x="375" data-y="-1450" data-rotate-z="-90">
+		<div class="context context-exec">
+			<div class="c-name">Global Execution Context</div>
+		</div>
+		<div class="scope-object">
+			<div class="s-name">Scope</div>
+		</div>
+		<div class="variable-object">
+			<div class="objtype objtype-v">Variable Object</div>
+			<div class="objtype objtype-a">Activation Object</div>
+			<div class="objtype objtype-t">this === window</div>
+			<ul>
+				<li class="var"><label>index:</label><span class="proptype-a">0</span></li>
+				<li class="var"><label>title:</label><span class="proptype-a">''</span></li>
+				<li class="var"><label>arr:</label><span class="proptype-a">[]</span></li>
+				<li class="func"><label>foo:</label><span class="proptype-a">() {...}</span><span class="f-scope">[[scope]]</span></li>
+				<li class="func"><label>bar:</label><span class="proptype-a">(index) {...}</span><span class="f-scope">[[scope]]</span></li>
+				<li class="args"><label>[arguments]</label></li>
+				<li class="schain"><label>[[scope]]</label</li>
+			</ul>
+		</div>
+		<div class="scopechain-object"><label>Scope Chain:</label> Root <span>[[scope]]</span></div>
+		<div class="this-object">
+			<div class="t-name">this</div>
+			<div class="this-content-mystery">?</div>
+		</div>
+    </div>
+	
+	<div id="contexts-code" class="step only-group-contexts" data-isprop="true" data-group="contexts" data-x="700" data-y="-1900" data-rotate-z="-90">
 		<img src="images/code-contexts.png" />
     </div>
 	
-	<div id="contexts1a" class="step" data-group="contexts" data-x="500" data-y="-1900" data-rotate-z="-90"></div>
-	<div id="contexts16" class="step" data-group="contexts" data-x="900" data-y="-1900" data-rotate-z="-90"></div>
+	<div id="contexts-code-top" class="step" data-group="contexts" data-x="500" data-y="-1900" data-rotate-z="-90"></div>
+	<div id="contexts-code-bottom" class="step" data-group="contexts" data-x="900" data-y="-1900" data-rotate-z="-90"></div>
 	
-	<div id="contexts2" class="step only-present smoothfade" data-substeps="2" data-group="contexts" data-x="600" data-y="-1500" data-rotate-z="-90" data-scale="1.75">
+	<div id="contexts-tour" class="step only-present smoothfade" data-substeps="4" data-group="contexts" data-x="600" data-y="-1500" data-rotate-z="-90" data-scale="1.75">
 		<div class="c-queue">
-			<div class="context global-context">
+			<div class="context context-global">
 				<div class="c-name">Global Context: SCRIPT</div>
 			</div>
 			<div class="variable-object">
-				<div class="objtype">Variable Object</div>
+				<div class="objtype objtype-v">Variable Object</div>
+				<div class="objtype objtype-t">window</div>
 				<ul>
-					<li class="var"><label>memes</label></li>
-					<li class="var"><label>currentMemeIndex</label></li>
-					<li class="func"><label>Meme</label></li>
-					<li class="func"><label>buildMemes</label></li>
-					<li class="func"><label>displayMemes</label></li>
+					<li class="var"><label>memes</label><span class="proptype-a">: []</span></li>
+					<li class="var"><label>currentMemeIndex</label><span class="proptype-a">: -1</span></li>
+					<li class="func"><label>Meme</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="func"><label>buildMemes</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="func"><label>displayMemes</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="schain"><label>[[scope]]</label><span class="proptype-a"> -> window </span></li>
 				</ul>
 			</div>
 		</div>
+		<div class="curve1"></div><div class="curve2"></div><div class="curve3"></div><div class="curve4"></div><div class="curve5"></div>
     </div>
 	
-	<div id="contexts3" class="step only-present smoothfade" data-group="contexts" data-x="600" data-y="-1500" data-rotate-z="-90" data-scale="1.75">
+	<div id="contexts-code-tour2" class="step only-present" data-group="contexts" data-x="1200" data-y="-1900" data-rotate-z="-90">
+		<div class="highlight"></div>
+	</div>
+	
+	<div id="contexts-tour2" class="step only-present smoothfade" data-substeps="2" data-group="contexts" data-x="600" data-y="-1500" data-rotate-z="-90" data-scale="1.75">
 		<div class="c-queue">
-			<div class="context global-context">
+			<div class="context context-global">
 				<div class="c-name">Global Context: SCRIPT</div>
 			</div>
-			<div class="context function-context">
+			<div class="vo-global variable-object">
+				<div class="objtype objtype-t">window</div>
+				<ul>
+					<li class="var"><label>memes</label><span class="proptype-a">: []</span></li>
+					<li class="var"><label>currentMemeIndex</label><span class="proptype-a">: -1</span></li>
+					<li class="func"><label>Meme</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="func"><label>buildMemes</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="func"><label>displayMemes</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="schain"><label>[[scope]]</label><span class="proptype-a"> -> window </span></li>
+				</ul>
+			</div>
+			<div class="context context-function context-fmeme">
+				<div class="c-name">Function Context: buildMemes</div>
+			</div>
+			<div class="vo-fmeme variable-object">
+				<div class="objtype">Activation Object</div>
+				<ul>
+					<li class="var"><label>count:</label> 0</li>
+					<li class="func"><label>addMeme:</label> (...) {...}</li>
+					<li class="args"><label>[arguments]</label><br/><span class="func">OnBuilt: (...) {...}</span></li>
+				</ul>
+			</div>
+			<div class="scopechain-object sco-fmeme"><label>Scope Chain:</label> Global Context</div>
+			<div class="to-fmeme this-object"><label>this:</label> window</div>
+		</div>
+    </div>
+	
+	<div id="contexts-code-tour3" class="step only-present" data-group="contexts" data-x="900" data-y="-1900" data-rotate-z="-90">
+		<div class="highlight"></div>
+	</div>
+	
+	<div id="contexts-tour3" class="step only-present smoothfade" data-substeps="2" data-group="contexts" data-x="600" data-y="-1500" data-rotate-z="-90" data-scale="1.75">
+		<div class="c-queue">
+			<div class="context context-global">
+				<div class="c-name">Global Context: SCRIPT</div>
+			</div>
+			<div class="vo-global variable-object">
+				<div class="objtype objtype-t">window</div>
+				<ul>
+					<li class="var"><label>memes</label><span class="proptype-a">: []</span></li>
+					<li class="var"><label>currentMemeIndex</label><span class="proptype-a">: -1</span></li>
+					<li class="func"><label>Meme</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="func"><label>buildMemes</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="func"><label>displayMemes</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="schain"><label>[[scope]]</label><span class="proptype-a"> -> window </span></li>
+				</ul>
+			</div>
+			<div class="context context-function context-fmeme">
+				<div class="c-name">Function Context: buildMemes</div>
+			</div>
+			<div class="vo-fmeme variable-object">
+				<div class="objtype">Activation Object</div>
+				<ul>
+					<li class="var"><label>count:</label> 0</li>
+					<li class="func"><label>buildMeme:</label> (...) {...}</li>
+					<li class="args"><label>[arguments]</label><br/><span class="func">OnBuilt: (...) {...}</span></li>
+				</ul>
+			</div>
+			<div class="scopechain-object sco-fmeme"><label>Scope Chain:</label> Global Context</div>
+			<div class="to-fmeme this-object"><label>this:</label> window</div>
+
+			<div class="context context-function context-fameme">
+				<div class="c-name">Function Context: addMeme</div>
+			</div>
+			<div class="vo-fameme variable-object">
+				<div class="objtype">Activation Object</div>
+				<ul>
+					<li class="args"><label>[arguments]</label><br/><span class="var">meme: instanceOf Meme</span></li>
+				</ul>
+			</div>
+			<div class="scopechain-object sco-fameme"><label>Scope Chain:</label> buildMemes Context</div>
+			<div class="to-fameme this-object"><label>this:</label> window</div>
+		</div>
+    </div>
+	
+	<div id="contexts-code-tour4" class="step only-present" data-group="contexts" data-x="900" data-y="-1900" data-rotate-z="-90">
+		<div class="highlight"></div>
+	</div>
+	
+	<div id="contexts-code-tour4b" class="step only-present" data-group="contexts" data-x="400" data-y="-1900" data-rotate-z="-90">
+		<div class="highlight"></div>
+	</div>
+	
+	<div id="contexts-tour4" class="step only-present smoothfade" data-group="contexts" data-x="600" data-y="-1500" data-rotate-z="-90" data-scale="1.75">
+		<div class="c-queue" style="margin-top: -190px;">
+			<div class="context context-global">
+				<div class="c-name">Global Context: SCRIPT</div>
+			</div>
+			<div class="vo-global variable-object">
+				<div class="objtype objtype-t">window</div>
+				<ul>
+					<li class="var"><label>memes</label><span class="proptype-a">: []</span></li>
+					<li class="var"><label>currentMemeIndex</label><span class="proptype-a">: -1</span></li>
+					<li class="func"><label>Meme</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="func"><label>buildMemes</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="func"><label>displayMemes</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="schain"><label>[[scope]]</label><span class="proptype-a"> -> window </span></li>
+				</ul>
+			</div>
+			<div class="context context-function context-fmeme">
+				<div class="c-name">Function Context: buildMemes</div>
+			</div>
+			<div class="vo-fmeme variable-object">
+				<div class="objtype">Activation Object</div>
+				<ul>
+					<li class="var"><label>count:</label> 0</li>
+					<li class="func"><label>buildMeme:</label> (...) {...}</li>
+					<li class="args"><label>[arguments]</label><br/><span class="func">OnBuilt: (...) {...}</span></li>
+				</ul>
+			</div>
+			<div class="scopechain-object sco-fmeme"><label>Scope Chain:</label> Global Context</div>
+			<div class="to-fmeme this-object"><label>this:</label> window</div>
+
+			<div class="context context-function context-fameme">
+				<div class="c-name">Function Context: addMeme</div>
+			</div>
+			<div class="vo-fameme variable-object">
+				<div class="objtype">Activation Object</div>
+				<ul>
+					<li class="args"><label>[arguments]</label><br/><span class="var">meme: instanceOf Meme</span></li>
+				</ul>
+			</div>
+			<div class="scopechain-object sco-fameme"><label>Scope Chain:</label> buildMemes Context</div>
+			<div class="to-fameme this-object"><label>this:</label> window</div>
+			
+			<div class="context context-function context-fimeme">
 				<div class="c-name">Function Context: Meme</div>
 			</div>
+			<div class="vo-fimeme variable-object">
+				<div class="objtype">Activation Object</div>
+				<ul>
+					<li class="var"><label>$m:</label> instance of Meme</li>
+					<li class="var"><label>width:</label> 500</li>
+					<li class="var"><label>height:</label> 350</li>
+					<li class="args"><label>[arguments]</label><br/>
+					<span class="var">name: 'Nyan Cat'</span><br/>
+					<span class="var">graphic: 'images/....'</span>
+					</li>
+				</ul>
+			</div>
+			<div class="scopechain-object sco-fimeme"><label>Scope Chain:</label> buildMemes Context</div>
+			<div class="to-fimeme this-object"><label>this:</label> instance of Meme</div>
 		</div>
     </div>
 
+	<div id="contexts-code-tour5" class="step only-present" data-group="contexts" data-x="400" data-y="-1900" data-rotate-z="-90">
+		<div class="highlight"></div>
+	</div>
+	
+	<div id="contexts-code-tour5" class="step only-present" data-group="contexts" data-x="1000" data-y="-1900" data-rotate-z="-90">
+		<div class="highlight"></div>
+	</div>
+	
 	<div id="overview" class="step" data-x="0" data-y="-500" data-scale="6"></div>
 </div>
 
@@ -492,6 +713,32 @@ function(step, index, forward) {
 	
 	$('#protochain img').src = 'images/code-protochain' + (index - 1) + '.png';
 }
+
+/*
+
+		<div class="variable-object" style="display:none;">
+			<div class="objtype">Variable Object</div>
+			<ul>
+				<li class="var"><label>index:</label>0</li>
+				<li class="var"><label>title:</label>''</li>
+				<li class="var"><label>arr:</label>[]</li>
+				<li class="func"><label>foo:</label>(){...}</li>
+				<li class="func"><label>bar:</label>(index){...}</li>
+			</ul>
+		</div>
+
+*/
+
+/*
+var contextsintroActionSub3 = function(step, index, forward)
+{
+	var ul = $('#contexts-intro .variable-object ul');
+		alert('here');
+	var li=document.createElement("li");
+	li = ul.appendChild(li); 
+	li.innerHTML = '<li class="args"><label>arguments</label><span></span></li>';
+}
+*/
 
 var $ = function ( selector, context ) {
         context = context || document;

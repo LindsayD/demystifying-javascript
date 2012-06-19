@@ -267,26 +267,6 @@ div.line{
     
     They cover everything what you see on first three steps of the demo.
 */
-.concept {
-    display: block;
-
-    width: 900px;
-    height: 700px;
-    padding: 40px 60px;
-
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, .3);
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
-
-    color: rgb(102, 102, 102);
-    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
-
-    font-family: 'Paytone One', Arial, sans-serif;
-    font-size: 30px;
-    line-height: 36px;
-    letter-spacing: -1px;
-}
 
 .title {
 	font-family: 'Sansita One', Arial, sans-serif;
@@ -1272,367 +1252,1373 @@ to { opacity: 1; }
 
 .impress-group-contexts .c-queue{
 	position: absolute;
-	width: 400px;
-	top:-230px;
+	width: 420px;
+	top: -230px;
 	left: 0;
 }
 
 .impress-group-contexts  div.context
 {
-	border: 2px solid rgba(0,0,0,0.75);
+	border: 3px solid rgba(255,255,255,0.75);
 	padding: 10px;
-	margin-bottom: 5px;
+	margin: 0 0 5px 0;
 	font-size: 70%;
-	-moz-border-radius: 20px;
-    border-radius: 20px;
+	-moz-border-radius: 30px;
+    border-radius: 30px;
+	font-family: 'Sansita One', Arial, sans-serif;
+	color: #fff;
 }
 .impress-group-contexts  div.c-name
 {
 	padding: 5px;
-	color: #000;
+	color: #fff;
+	font-family: 'Sansita One', Arial, sans-serif;
 }
 
-.impress-group-contexts  .global-context
+.impress-group-contexts  .context-global
 {
-	background-color: rgba(255,255,255, 0.75);
+	background-color: rgba(60,17,90, 0.75);
 }
 
-.impress-group-contexts  .function-context
+.impress-group-contexts  .context-exec
 {
-	background: #ddf;
+	background-color: rgba(60,17,90, 0.75);
+}
+
+.impress-group-contexts  .context-function
+{
+	background: rgba(121,32, 131, 0.75);
 }
 
 .impress-group-contexts .variable-object {
 	position: absolute;
-	width: 350px;
+	left: 10px;
+	width: 400px;
 	background-color: #fff;
-	opacity: 1;
 	font-size: 70%;
 	font-family: 'Consolas';
 }
 .impress-group-contexts .variable-object ul
 {
-	width: 300px;
+	width: 350px;
 	margin-left: 50px;
 }
 .impress-group-contexts .variable-object li
 {
 	border: 2px solid #fff;
 	padding: 10px;
+	position: relative;
 }
-.impress-group-contexts .variable-object li.var
+.impress-group-contexts .variable-object .var
 {
 	background-color: #ddf;
 }
-.impress-group-contexts .variable-object li.func
+.impress-group-contexts .variable-object .func
 {
 	background-color: #dff;
 }
 .impress-group-contexts .variable-object div.objtype
 {
 	position: absolute;
-	top: 115px;
-	left: -150px;
+	top: 0px;
+	left: -100%;
 	width: 100%;
-	text-align: center;
+	text-align: right;
 	font-size: 1.1em;
+	margin-top: 15px;
+	padding-right: 5px;
+	font-family: 'Sansita One', Arial, sans-serif;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform:    rotate(-90deg);
+    -ms-transform:     rotate(-90deg);
+    -o-transform:      rotate(-90deg);
+    transform:         rotate(-90deg);
+	
+	-webkit-transform-origin: 100% 0 0;
+    -moz-transform-origin: 0 0 0;
+    -ms-transform-origin: 0 0 0;
+    -o-transform-origin: 0 0 0;
+    transform-origin: 0 0 0;
+}
+
+.impress-on-contexts-intro #contexts-code { opacity: 0; }
+.impress-on-contexts-global #contexts-code { opacity: 0; }
+
+.impress-group-contexts .objtype-t { font-family: Consolas; }
+
+#contexts-intro .objtype-v,
+#contexts-global .objtype-v,
+#contexts-global .objtype-t,
+#contexts-tour .objtype-v,
+#contexts-tour .objtype-t
+{ 
+	opacity: 0; 
+	
+	-webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+}
+#contexts-intro span.proptype-v {
+	display: none;
+}
+
+#contexts-intro.substep1 .objtype-v,
+#contexts-intro.substep2 .objtype-v,
+#contexts-global.substep4 .objtype-v,
+#contexts-global.substep5 .objtype-t,
+#contexts-tour.substep1 .objtype-v,
+#contexts-tour.substep2 .objtype-v,
+#contexts-tour.substep3 .objtype-t
+{	
+	opacity: 1;
+	
+	-webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+}
+
+#contexts-intro.substep1 span.proptype-v,
+#contexts-intro.substep2 span.proptype-v,
+#contexts-intro.substep3 span.proptype-v
+{ display: inline; }
+
+#contexts-intro .objtype-a, 
+#contexts-global .objtype-a
+{ 
+	opacity: 1; 
+	
+	-webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+}
+#contexts-intro span.proptype-a,
+#contexts-tour span.proptype-a 
+{
+	display: inline;
+}
+
+#contexts-intro.substep1 .objtype-a,
+#contexts-intro.substep2 .objtype-a,
+#contexts-global.substep4 .objtype-a,
+#contexts-global.substep5 .objtype-a
+{	
+	opacity: 0;
+
+	-webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+}
+
+#contexts-intro.substep1 span.proptype-a,
+#contexts-intro.substep2 span.proptype-a,
+#contexts-intro.substep3 span.proptype-a,
+#contexts-tour.substep1 span.proptype-a,
+#contexts-tour.substep2 span.proptype-a
+{ display: none; }
+
+
+#contexts-intro.substep1 .variable-object { 
+	opacity: 0; 
+	-webkit-transition: opacity 0s;
+    -moz-transition:    opacity 0s;
+    -ms-transition:     opacity 0s;
+    -o-transition:      opacity 0s;
+    transition:         opacity 0s;
+}
+#contexts-intro .variable-object,
+#contexts-global .variable-object
+{
+	opacity: 1;
+	top: 130px;
+	left: 155px;
+	
+	-webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+}
+
+.impress-group-contexts .variable-object .args
+{ background-color: #fdd;}
+.impress-group-contexts .variable-object li.args
+{
+	display: block;
+	height: auto;
+}
+.impress-group-contexts .variable-object li.args span
+{ padding: 4px; }
+
+#contexts-intro.substep1 .variable-object .args,
+#contexts-intro.substep2 .variable-object .args,
+#contexts-global.substep4 .variable-object .args,
+#contexts-global.substep5 .variable-object .args
+{
+	display: none;
+	height: 0;
+}
+
+.impress-group-contexts .variable-object .schain
+{ background-color: #ffd; }
+
+.impress-group-contexts .variable-object li.schain
+{
+	display: block;
+	height: auto;
+}
+
+#contexts-global.substep1 .variable-object .schain,
+#contexts-tour.substep1 .variable-object .schain,
+#contexts-tour.substep2 .variable-object .schain
+{
+	display: none;
+	height: 0;
+}
+
+#contexts-intro .context, 
+#contexts-global .context 
+{
+	min-height: 510px;
+	-moz-border-radius: 50px;
+    border-radius: 50px;
+	padding: 10px 30px 30px 30px;
+	font-size: 100%;
+}
+
+#contexts-intro .scope-object,
+#contexts-global .scope-object
+{
+	opacity: 0;
+	
+	position: absolute;
+	width: 465px;
+	min-height: 442px;
+	top: 120px;
+	left: 100px;
+	background-color: #ddd;
+}
+
+#contexts-global .scope-object {
+	opacity: 0;
+	
+	-webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+}
+
+#contexts-intro .scope-object .s-name, 
+#contexts-global .scope-object .s-name
+{
+	position: absolute;
+	top: 220px;
+	left: -205px;
+	width: 100%;
+	text-align: right;
+	font-size: 1.1em;
+	font-family: 'Sansita One', Arial, sans-serif;
     -webkit-transform: rotate(-90deg);
     -moz-transform:    rotate(-90deg);
     -ms-transform:     rotate(-90deg);
     -o-transform:      rotate(-90deg);
     transform:         rotate(-90deg);
 }
-#contexts2.substep1 .variable-object { opacity: 0; }
-#contexts2.substep2 .variable-object {
-	top: 10px;
-	left: 250px;
+
+#contexts-intro.substep5 .scope-object,
+#contexts-intro.substep6 .scope-object,
+#contexts-intro.substep7 .scope-object,
+#contexts-intro.substep8 .scope-object,
+#contexts-intro.substep9 .scope-object,
+#contexts-intro.substep10 .scope-object,
+#contexts-intro.substep11 .scope-object,
+#contexts-intro.substep12 .scope-object,
+#contexts-global.substep1 .scope-object,
+#contexts-global.substep2 .scope-object 
+ {
+	opacity: 1;
+	
+	-webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
 }
 
-
-
-
-.slide q {
-    display: block;
-    font-size: 50px;
-    line-height: 72px;
-
-    margin-top: 100px;
+#contexts-intro .f-scope,
+#contexts-global .f-scope
+{ 
+	opacity: 0;
+	
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	background-color: #ddd;
+	border: 2px solid #fff;
+	font-size: 70%;
+}
+#contexts-intro.substep6 .f-scope,
+#contexts-intro.substep7 .f-scope,
+#contexts-intro.substep8 .f-scope,
+#contexts-intro.substep9 .f-scope,
+#contexts-intro.substep10 .f-scope,
+#contexts-intro.substep11 .f-scope,
+#contexts-intro.substep12 .f-scope,
+#contexts-global.substep1 .f-scope,
+#contexts-global.substep2 .f-scope
+{
+	opacity: 1;
+	
+	-webkit-transition: opacity 1.5s;
+    -moz-transition:    opacity 1.5s;
+    -ms-transition:     opacity 1.5s;
+    -o-transition:      opacity 1.5s;
+    transition:         opacity 1.5s;
 }
 
-.slide q strong {
-    white-space: nowrap;
+.impress-group-contexts .scopechain-object,
+#contexts-tour2 .this-object,
+#contexts-tour3 .this-object,
+#contexts-tour4 .this-object
+{ 
+	position: absolute;
+	padding: 5px 10px;
+	font-size: 70%;
+	background: #fff;
+}
+#contexts-intro .scopechain-object,
+#contexts-global .scopechain-object
+{
+	opacity: 0;
+	top: 505px;
+	left: 155px;
+	width: 380px;
 }
 
-/*
-    And now we start to style each step separately.
-    
-    I agree that this may be not the most efficient, object-oriented and
-    scalable way of styling, but most of steps have quite a custom look
-    and typography tricks here and there, so they had to be styles separately.
-
-    First is the title step with a big <h1> (no room for padding) and some
-    3D positioning along Z axis.
-*/
-
-#title {
-    padding: 0;
+#contexts-tour2 .this-object,
+#contexts-tour3 .this-object,
+#contexts-tour4 .this-object
+{
+font-family: Consolas;
+}
+.impress-group-contexts .scopechain-object label
+{
+	font-family: 'Sansita One', Arial, sans-serif;
+}
+.impress-group-contexts .scopechain-object span
+{
+	background-color: #ddd;
+	border: 2px solid #fff;
+	font-family: Consolas;
 }
 
-#title .try {
-    font-size: 64px;
-    position: absolute;
-    top: -0.5em;
-    left: 1.5em;
-    
-    -webkit-transform: translateZ(20px);
-    -moz-transform:    translateZ(20px);
-    -ms-transform:     translateZ(20px);
-    -o-transform:      translateZ(20px);
-    transform:         translateZ(20px);
+#contexts-intro.substep7 .scopechain-object,
+#contexts-intro.substep8 .scopechain-object,
+#contexts-intro.substep9 .scopechain-object,
+#contexts-intro.substep10 .scopechain-object,
+#contexts-intro.substep11 .scopechain-object,
+#contexts-intro.substep12 .scopechain-object,
+#contexts-global.substep1 .scopechain-object
+{
+	opacity: 1;
+	
+	-webkit-transition: opacity 1.5s;
+    -moz-transition:    opacity 1.5s;
+    -ms-transition:     opacity 1.5s;
+    -o-transition:      opacity 1.5s;
+    transition:         opacity 1.5s;
+}
+#contexts-global.substep2 .scopechain-object
+{
+	opacity: 0;
+	
+	-webkit-transition: opacity 1.5s;
+    -moz-transition:    opacity 1.5s;
+    -ms-transition:     opacity 1.5s;
+    -o-transition:      opacity 1.5s;
+    transition:         opacity 1.5s;
 }
 
-#title h1 {
-    font-size: 190px;
-    
-    -webkit-transform: translateZ(50px);
-    -moz-transform:    translateZ(50px);
-    -ms-transform:     translateZ(50px);
-    -o-transform:      translateZ(50px);
-    transform:         translateZ(50px);
+#contexts-intro .scopecurve1,
+#contexts-intro .scopecurve2,
+#contexts-intro .scopecurve3
+{
+	opacity: 0;
+}
+#contexts-intro.substep6 .scopecurve1
+{
+	position: absolute;
+	border-width: 12px 0 0 0;
+	border-style: solid;
+    border-color: #791f83 transparent transparent transparent;
+	-moz-border-radius: 100%;
+    border-radius: 100%;
+	height: 100px;
+	width: 350px;
+	top: 215px;
+	left: 120px;
+	
+	-webkit-animation: scopechaincurve 1s ease 0s 2 alternate;
+	-moz-animation: scopechaincurve 1s ease 0s 2 alternate;
+	-o-animation: scopechaincurve 1s ease 0s 2 alternate;
+	
+	-webkit-transform: rotate(10deg);
+    -moz-transform:    rotate(10deg);
+    -ms-transform:     rotate(10deg);
+    -o-transform:      rotate(10deg);
+    transform:         rotate(10deg);
 }
 
-#title .footnote {
-    font-size: 32px;
+#contexts-intro.substep6 .scopecurve1:after {
+    content: " ";
+	position: absolute;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 40px solid #791f83;
+	height: 1px;
+	width: 1px;
+	top: 30px;
+	left: 333px;
+	
+	-webkit-transform: rotate(-25deg);
+    -moz-transform:    rotate(-25deg);
+    -ms-transform:     rotate(-25deg);
+    -o-transform:      rotate(-25deg);
+    transform:         rotate(-25deg);
+	
 }
 
-/*
-    Second step is nothing special, just a text with a link, so it doesn't need
-    any special styling.
-    
-    Let's move to 'big thoughts' with centered text and custom font sizes.
-*/
-#big {
-    width: 600px;
-    text-align: center;
-    font-size: 60px;
-    line-height: 1;
+#contexts-intro.substep6 .scopecurve2
+{
+	position: absolute;
+	border-width: 12px 0 0 0;
+	border-style: solid;
+    border-color: #791f83 transparent transparent transparent;
+	-moz-border-radius: 100%;
+    border-radius: 100%;
+	height: 100px;
+	width: 350px;
+	top: 240px;
+	left: 120px;
+	
+	-webkit-animation: scopechaincurve 1s ease 0s 2 alternate;
+	-moz-animation: scopechaincurve 1s ease 0s 2 alternate;
+	-o-animation: scopechaincurve 1s ease 0s 2 alternate;
+	
+	-webkit-transform: rotate(20deg);
+    -moz-transform:    rotate(20deg);
+    -ms-transform:     rotate(20deg);
+    -o-transform:      rotate(20deg);
+    transform:         rotate(20deg);
 }
 
-#big b {
-    display: block;
-    font-size: 250px;
-    line-height: 250px;
+#contexts-intro.substep6 .scopecurve2:after {
+    content: " ";
+	position: absolute;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 40px solid #791f83;
+	height: 1px;
+	width: 1px;
+	top: 30px;
+	left: 333px;
+	
+	-webkit-transform: rotate(-25deg);
+    -moz-transform:    rotate(-25deg);
+    -ms-transform:     rotate(-25deg);
+    -o-transform:      rotate(-25deg);
+    transform:         rotate(-25deg);
+	
 }
 
-#big .thoughts {
-    font-size: 90px;
-    line-height: 150px;
+#contexts-intro.substep7 .scopecurve3
+{
+	position: absolute;
+	border-width: 40px 0 0 0;
+	border-style: solid;
+    border-color: rgba(60,17,90, 1) transparent transparent transparent;
+	-moz-border-radius: 100%;
+    border-radius: 100%;
+	height: 250px;
+	width: 900px;
+	top: 30px;
+	left: -320px;
+	
+	-webkit-animation: scopechaincurve 1s ease 0s 2 alternate;
+	-moz-animation: scopechaincurve 1s ease 0s 2 alternate;
+	-o-animation: scopechaincurve 1s ease 0s 2 alternate;
+	
+	-webkit-transform: rotate(45deg);
+    -moz-transform:    rotate(45deg);
+    -ms-transform:     rotate(45deg);
+    -o-transform:      rotate(45deg);
+    transform:         rotate(45deg);
 }
 
-/*
-    'Tiny ideas' just need some tiny styling.
-*/
-#tiny {
-    width: 500px;
-    text-align: center;
+#contexts-intro.substep7 .scopecurve3:after {
+    content: " ";
+	position: absolute;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 40px solid rgba(60,17,90, 1);
+	height: 1px;
+	width: 1px;
+	top: 82px;
+	left: 880px;
+	
+	-webkit-transform: rotate(-25deg);
+    -moz-transform:    rotate(-25deg);
+    -ms-transform:     rotate(-25deg);
+    -o-transform:      rotate(-25deg);
+    transform:         rotate(-25deg);
+	
 }
 
-/*
-    This step has some animated text ...
-*/
-#ing { width: 500px }
-
-/*
-    ... so we define display to `inline-block` to enable transforms and
-    transition duration to 0.5s ...
-*/
-#ing b {
-    display: inline-block;
-    -webkit-transition: 0.5s;
-    -moz-transition:    0.5s;
-    -ms-transition:     0.5s;
-    -o-transition:      0.5s;
-    transition:         0.5s;
+@keyframes scopechaincurve
+{
+0% { opacity: 0; }
+100% { opacity: 1; }
 }
 
-/*
-    ... and we want 'positioning` word to move up a bit when the step gets
-    `present` class ...
-*/
-#ing.present .positioning {
-    -webkit-transform: translateY(-10px);
-    -moz-transform:    translateY(-10px);
-    -ms-transform:     translateY(-10px);
-    -o-transform:      translateY(-10px);
-    transform:         translateY(-10px);
+@-moz-keyframes scopechaincurve /* Firefox */
+{
+0% { opacity: 0; }
+100% { opacity: 1; }
 }
 
-/*
-    ... 'rotating' to rotate quater of a second later ...
-*/
-#ing.present .rotating {
-    -webkit-transform: rotate(-10deg);
+@-webkit-keyframes scopechaincurve /*Safari and Chrome */
+{
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+
+#contexts-intro .this-object,
+#contexts-global .this-object
+{
+	opacity: 0;
+	position: absolute;
+	top: 120px;
+	left: 540px;
+	width: 220px;
+	height: 220px;
+	padding: 5px 10px;
+	background: #fff;
+	margin-left: 50px;
+}
+
+#contexts-intro.substep8 .this-object,
+#contexts-intro.substep9 .this-object,
+#contexts-intro.substep10 .this-object,
+#contexts-intro.substep11 .this-object,
+#contexts-global.substep1 .this-object,
+#contexts-global.substep2 .this-object,
+#contexts-global.substep3 .this-object,
+#contexts-global.substep4 .this-object
+{
+	opacity: 1;
+	
+	-webkit-transition: opacity 1.5s;
+    -moz-transition:    opacity 1.5s;
+    -ms-transition:     opacity 1.5s;
+    -o-transition:      opacity 1.5s;
+    transition:         opacity 1.5s;
+}
+
+#contexts-global.substep5 .this-object {
+	opacity: 0;
+
+	-webkit-animation: thismergestart 0.5s 0s 1, thismerge 1s ease 0s 1 normal;
+	-moz-animation: thismergestart 0.5s 0s 1, thismerge 1s ease 0s 1 normal;
+	-o-animation: thismergestart 0.5s 0s 1, thismerge 1s ease 0s 1 normal;
+}
+
+@keyframes thismergestart
+{
+0% { opacity: 1; }
+100% { opacity: 1; }
+}
+
+@-moz-keyframes thismergestart /* Firefox */
+{
+0% { opacity: 1; }
+100% { opacity: 1; }
+}
+
+@-webkit-keyframes thismergestart /*Safari and Chrome */
+{
+0% { opacity: 1; }
+100% { opacity: 1; }
+}
+
+@keyframes thismerge
+{
+0% { opacity: 1; left: 540px; top: 120px; }
+100% { opacity: 0; left: 155px; top: 150px; }
+}
+
+@-moz-keyframes thismerge /* Firefox */
+{
+0% { opacity: 1; left: 540px; top: 120px; }
+100% { opacity: 0; left: 155px; top: 150px; }
+}
+
+@-webkit-keyframes thismerge /*Safari and Chrome */
+{
+0% { opacity: 1; left: 540px; top: 120px; }
+100% { opacity: 0; left: 155px; top: 150px; }
+}
+
+#contexts-intro .this-object .t-name,
+#contexts-global .this-object .t-name
+{
+	position: absolute;
+	top: 100px;
+	left: -95px;
+	width: 100%;
+	text-align: right;
+	font-size: 1.1em;
+	font-family: Consolas;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform:    rotate(-90deg);
+    -ms-transform:     rotate(-90deg);
+    -o-transform:      rotate(-90deg);
+    transform:         rotate(-90deg);
+}
+
+#contexts-intro .this-content-mystery, 
+#contexts-global .this-content-mystery
+{
+	position: absolute;
+	top: 5px;
+	left: 50px;
+	height: 220px;
+	width: 125px;
+	font-size: 500%;
+	line-height: 220px;
+	padding-left: 60px;
+	background-color: #ddf;
+}
+
+#contexts-intro .this-content-method,
+#contexts-intro .this-content-funcinfunc,
+#contexts-intro .this-content-global 
+{
+	position: absolute;
+	top: 5px;
+	left: 50px;
+	height: 185px;
+	width: 154px;
+	padding: 15px;
+	background-color: #ddf;
+	font-size: 80%;
+	line-height: 1.2em;
+}
+
+#contexts-intro .this-content-mystery,
+#contexts-intro .this-content-method,
+#contexts-intro .this-content-funcinfunc,
+#contexts-intro .this-content-global,
+#contexts-intro .c-for-method,
+#contexts-intro .c-for-funcinfunc,
+#contexts-intro .c-for-global,
+#contexts-intro .this-example-method,
+#contexts-intro .this-example-funcinfunc,
+#contexts-intro .this-example-global
+{ opacity: 0; }
+
+#contexts-intro .c-for-method,
+#contexts-intro .c-for-funcinfunc,
+#contexts-intro .c-for-global
+{ 
+	position: absolute;
+	display: block;
+	font-size: 60%;
+	top: 63px;
+	left: 392px;
+}
+
+#contexts-intro .this-example-method,
+#contexts-intro .this-example-funcinfunc,
+#contexts-intro .this-example-global
+{ 
+	position: absolute;
+	top: 363px;
+	left: 510px;
+}
+
+#contexts-intro.substep8 .this-content-mystery,
+#contexts-intro.substep9 .this-content-method,
+#contexts-intro.substep9 .c-for-method,
+#contexts-intro.substep9 .this-example-method,
+#contexts-intro.substep10 .this-content-funcinfunc,
+#contexts-intro.substep10 .c-for-funcinfunc,
+#contexts-intro.substep10 .this-example-funcinfunc,
+#contexts-intro.substep11 .this-content-global,
+#contexts-intro.substep11 .c-for-global,
+#contexts-intro.substep11 .this-example-global
+{
+	opacity: 1;
+
+	-webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+}
+
+#contexts-intro .qualifier { color: #fff; font-size: 150%;}
+
+#contexts-tour.substep1 .variable-object { opacity: 0; }
+#contexts-tour.substep2 .variable-object,
+#contexts-tour.substep3 .variable-object
+{
+	opacity: 1;
+	top: 60px;
+	left: 10px;
+	
+	-webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+}
+
+#contexts-tour.substep2 .context {
+	height: 360px;
+}
+
+#contexts-tour .curve1,
+#contexts-tour .curve2,
+#contexts-tour .curve3,
+#contexts-tour .curve4,
+#contexts-tour .curve5
+{
+	opacity: 0;
+}
+
+#contexts-tour.substep2 .curve1
+{
+	position: absolute;
+	border-width: 12px 0 0 0;
+	border-style: solid;
+    border-color: #791f83 transparent transparent transparent;
+	-moz-border-radius: 100%;
+    border-radius: 100%;
+	height: 100px;
+	width: 260px;
+	top: -235px;
+	left: 235px;
+	
+	-webkit-animation: scopechaincurve 1s ease 0s 2 alternate;
+	-moz-animation: scopechaincurve 1s ease 0s 2 alternate;
+	-o-animation: scopechaincurve 1s ease 0s 2 alternate;
+	
+	-webkit-transform: rotate(-10deg);
     -moz-transform:    rotate(-10deg);
     -ms-transform:     rotate(-10deg);
     -o-transform:      rotate(-10deg);
     transform:         rotate(-10deg);
-
-    -webkit-transition-delay: 0.25s;
-    -moz-transition-delay:    0.25s;
-    -ms-transition-delay:     0.25s;
-    -o-transition-delay:      0.25s;
-    transition-delay:         0.25s;
 }
 
-/*
-    ... and 'scaling' to scale down after another quater of a second.
-*/
-#ing.present .scaling {
-    -webkit-transform: scale(0.7);
-    -moz-transform:    scale(0.7);
-    -ms-transform:     scale(0.7);
-    -o-transform:      scale(0.7);
-    transform:         scale(0.7);
-
-    -webkit-transition-delay: 0.5s;
-    -moz-transition-delay:    0.5s;
-    -ms-transition-delay:     0.5s;
-    -o-transition-delay:      0.5s;
-    transition-delay:         0.5s;
+#contexts-tour.substep2 .curve1:after {
+    content: " ";
+	position: absolute;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 30px solid #791f83;
+	height: 1px;
+	width: 1px;
+	top: 25px;
+	left: -19px;
+	
+	-webkit-transform: rotate(35deg);
+    -moz-transform:    rotate(35deg);
+    -ms-transform:     rotate(35deg);
+    -o-transform:      rotate(35deg);
+    transform:         rotate(35deg);
+	
 }
 
-/*
-    The 'imagination' step is again some boring font-sizing.
-*/
-
-#imagination {
-    width: 600px;
+#contexts-tour.substep2 .curve2
+{
+	position: absolute;
+	border-width: 12px 0 0 0;
+	border-style: solid;
+    border-color: #791f83 transparent transparent transparent;
+	-moz-border-radius: 100%;
+    border-radius: 100%;
+	height: 100px;
+	width: 260px;
+	top: -205px;
+	left: 245px;
+	
+	-webkit-animation: scopechaincurve 1s ease 0s 2 alternate;
+	-moz-animation: scopechaincurve 1s ease 0s 2 alternate;
+	-o-animation: scopechaincurve 1s ease 0s 2 alternate;
+	
+	-webkit-transform: rotate(-20deg);
+    -moz-transform:    rotate(-20deg);
+    -ms-transform:     rotate(-20deg);
+    -o-transform:      rotate(-20deg);
+    transform:         rotate(-20deg);
 }
 
-#imagination .imagination {
-    font-size: 78px;
+#contexts-tour.substep2 .curve2:after {
+    content: " ";
+	position: absolute;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 30px solid #791f83;
+	height: 1px;
+	width: 1px;
+	top: 25px;
+	left: -19px;
+	
+	-webkit-transform: rotate(35deg);
+    -moz-transform:    rotate(35deg);
+    -ms-transform:     rotate(35deg);
+    -o-transform:      rotate(35deg);
+    transform:         rotate(35deg);
+	
 }
 
-/*
-    There is nothing really special about 'use the source, Luke' step, too,
-    except maybe of the Yoda background.
-    
-    As you can see below I've 'hard-coded' it in data URL.
-    That's not the best way to serve images, but because that's just this one
-    I decided it will be OK to have it this way.
-    
-    Just make sure you don't blindly copy this approach.
-*/
-#source {
-    width: 700px;
-    padding-bottom: 300px;
-    
-    /* Yoda Icon :: Pixel Art from Star Wars http://www.pixeljoint.com/pixelart/1423.htm */
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAMAAACwUBm+AAAAAXNSR0IArs4c6QAAAKtQTFRFsAAAvbWSLUUrLEQqY1s8UYJMqJ1vNTEgOiIdIzYhjIFVLhsXZ6lgSEIsP2U8JhcCVzMsSXZEgXdOO145XJdWOl03LzAYMk4vSXNExr+hwcuxRTs1Qmk+RW9Am49eFRANQz4pUoNMQWc+OSMDTz0wLBsCNVMxa2NBOyUDUoNNSnlEWo9VRGxAVzYFl6tXCggHbLNmMUIcHhwTXkk5f3VNRT8wUT8xAAAACQocRBWFFwAAAAF0Uk5TAEDm2GYAAAPCSURBVHja7d3JctNAFIZRMwRCCGEmzPM8z/D+T8bu/ptbXXJFdij5fMt2Wuo+2UgqxVmtttq5WVotLzBgwIABAwYMGDCn0qVqbo69psPqVpWx+1XG5iaavF8wYMCAAQMGDBgwi4DJ6Y6qkxB1HNlcN3a92gbR5P2CAQMGDBgwYMCAWSxMlrU+UY5yu2l9okfV4bAxUVbf7TJnAwMGDBgwYMCAAbMLMHeqbGR82Zy+VR1Ht81nVca6R+UdTLaU24Ruzd3qM/e4yjnAgAEDBgwYMGDA7AJMd1l/3NRdVGcj3eX/2WEhCmDGxnM7yqygu8XIPjJj8iN/MGDAgAEDBgwYMAuDGb8q0RGlLCHLv1t9qDKWn3vdNHVuEI6HPaxO9Jo3GDBgwIABAwYMmIXBdC9ShGgMk+XnkXUeuGcsP/e1+lhNnZsL/G5Vs3OAAQMGDBgwYMCAWSxMR3SzOmraG5atdy9wZKzb+vg16qyqe2FltbnAgAEDBgwYMGDALAxmTJSuN3WA76rnVca6GTnemGN1WoEBAwYMGDBgwIBZGMxUomy4+xO899V4LAg5Xnc2MGDAgAEDBgwYMGA218Wq+2K1LDqvY9xZu8zN8fICdM6btYABAwYMGDBgwIABMzfH0+pGU5afze2tXebmeAfVz+p8BQYMGDBgwIABAwbMPBzZ+oWmfJrln1273FhkbHzee9WWbw7AgAEDBgwYMGDALAKm43hcdctKgblcPamOhuXnXlY5Xs6bsW4FGyQCAwYMGDBgwIABswiYMceZKgvMo+h8mrHLTdn676rj+FEFoTtHd8MwOxEYMGDAgAEDBgyYRcBM5UhXqiymW3R3c9ARhWO/OmjqfjVZy+xEYMCAAQMGDBgwYBYG073OnCV0RFNhMhaOa9WfKmOB6XjHMN1tQmaAAQMGDBgwYMCA2VWY7vXjz1U4croAzgPztwIDBgwYMGDAgAEDZhswh035NBw59Dww3RgYMGDAgAEDBgwYMJuD6f4tXT7NUqfCdBvZLkxXdgQGDBgwYMCAAQNmt2DGj8WzwAfV/w7T/aq7mxwwYMCAAQMGDBgwuwqTOo7uTwTngflSzQ3TdaJvAwEDBgwYMGDAgAED5gSvgbyo5oHZ4Pc+gwEDBgwYMGDAgAEzhOm+5G0qTGaAAQMGDBgwYMCAAXNaMOcnls3tNwWm+zRzp54NDBgwYMCAAQMGDJh5YNL36k1TLuGvVq+qnKMbS5n7tulT9asCAwYMGDBgwIABA2ZumKuztLnjgQEDBgwYMGDAgNl5mH/4/ltKA6vBNAAAAABJRU5ErkJggg==);
-    background-position: bottom right;
-    background-repeat: no-repeat;
+#contexts-tour.substep2 .curve3
+{
+	position: absolute;
+	border-width: 12px 0 0 0;
+	border-style: solid;
+    border-color: #791f83 transparent transparent transparent;
+	-moz-border-radius: 100%;
+    border-radius: 100%;
+	height: 100px;
+	width: 260px;
+	top: -160px;
+	left: 275px;
+	
+	-webkit-animation: scopechaincurve 1s ease 0s 2 alternate;
+	-moz-animation: scopechaincurve 1s ease 0s 2 alternate;
+	-o-animation: scopechaincurve 1s ease 0s 2 alternate;
+	
+	-webkit-transform: rotate(-30deg);
+    -moz-transform:    rotate(-30deg);
+    -ms-transform:     rotate(-30deg);
+    -o-transform:      rotate(-30deg);
+    transform:         rotate(-30deg);
 }
 
-#source q {
-    font-size: 60px;
+#contexts-tour.substep2 .curve3:after {
+    content: " ";
+	position: absolute;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 30px solid #791f83;
+	height: 1px;
+	width: 1px;
+	top: 25px;
+	left: -19px;
+	
+	-webkit-transform: rotate(35deg);
+    -moz-transform:    rotate(35deg);
+    -ms-transform:     rotate(35deg);
+    -o-transform:      rotate(35deg);
+    transform:         rotate(35deg);
+	
 }
 
-/*
-    And the "it's in 3D" step again brings some 3D typography - just for fun.
-    
-    Because we want to position <span> elements in 3D we set transform-style to
-    `preserve-3d` on the paragraph.
-    It is not needed by webkit browsers, but it is in Firefox. It's hard to say
-    which behaviour is correct as 3D transforms spec is not very clear about it.
-*/
-#its-in-3d p {
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style:    preserve-3d; /* Y U need this Firefox?! */
-    -ms-transform-style:     preserve-3d;
-    -o-transform-style:      preserve-3d;
-    transform-style:         preserve-3d;
+#contexts-tour.substep2 .curve4
+{
+	position: absolute;
+	border-width: 12px 0 0 0;
+	border-style: solid;
+    border-color: #791f83 transparent transparent transparent;
+	-moz-border-radius: 100%;
+    border-radius: 100%;
+	height: 100px;
+	width: 230px;
+	top: 10px;
+	left: 290px;
+	
+	-webkit-animation: scopechaincurve 1s ease 0s 2 alternate;
+	-moz-animation: scopechaincurve 1s ease 0s 2 alternate;
+	-o-animation: scopechaincurve 1s ease 0s 2 alternate;
+	
+	-webkit-transform: rotate(12deg);
+    -moz-transform:    rotate(12deg);
+    -ms-transform:     rotate(12deg);
+    -o-transform:      rotate(12deg);
+    transform:         rotate(12deg);
 }
 
-/*
-    Below we position each word separately along Z axis and we want it to transition
-    to default position in 0.5s when the step gets `present` class.
-    
-    Quite a simple idea, but lot's of styles and prefixes.
-*/
-#its-in-3d span,
-#its-in-3d b {
-    display: inline-block;
-    -webkit-transform: translateZ(40px);
-    -moz-transform:    translateZ(40px);
-    -ms-transform:     translateZ(40px);
-    -o-transform:      translateZ(40px);
-     transform:        translateZ(40px);
-            
-    -webkit-transition: 0.5s;
-    -moz-transition:    0.5s;
-    -ms-transition:     0.5s;
-    -o-transition:      0.5s;
-    transition:         0.5s;
+#contexts-tour.substep2 .curve4:after {
+    content: " ";
+	position: absolute;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 30px solid #791f83;
+	height: 1px;
+	width: 1px;
+	top: 25px;
+	left: -19px;
+	
+	-webkit-transform: rotate(35deg);
+    -moz-transform:    rotate(35deg);
+    -ms-transform:     rotate(35deg);
+    -o-transform:      rotate(35deg);
+    transform:         rotate(35deg);
+	
 }
 
-#its-in-3d .have {
-    -webkit-transform: translateZ(-40px);
-    -moz-transform:    translateZ(-40px);
-    -ms-transform:     translateZ(-40px);
-    -o-transform:      translateZ(-40px);
-    transform:         translateZ(-40px);
+
+#contexts-tour.substep2 .curve5
+{
+	position: absolute;
+	border-width: 0 0 12px 0;
+	border-style: solid;
+    border-color: transparent transparent #791f83 transparent;
+	-moz-border-radius: 100%;
+    border-radius: 100%;
+	height: 100px;
+	width: 280px;
+	top: 140px;
+	left: 275px;
+	
+	-webkit-animation: scopechaincurve 1s ease 0s 2 alternate;
+	-moz-animation: scopechaincurve 1s ease 0s 2 alternate;
+	-o-animation: scopechaincurve 1s ease 0s 2 alternate;
+	
+	-webkit-transform: rotate(40deg);
+    -moz-transform:    rotate(40deg);
+    -ms-transform:     rotate(40deg);
+    -o-transform:      rotate(40deg);
+    transform:         rotate(40deg);
 }
 
-#its-in-3d .you {
-    -webkit-transform: translateZ(20px);
-    -moz-transform:    translateZ(20px);
-    -ms-transform:     translateZ(20px);
-    -o-transform:      translateZ(20px);
-    transform:         translateZ(20px);
+#contexts-tour.substep2 .curve5:after {
+    content: " ";
+	position: absolute;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 30px solid #791f83;
+	height: 1px;
+	width: 1px;
+	top: 35px;
+	left: -21px;
+	
+	-webkit-transform: rotate(-35deg);
+    -moz-transform:    rotate(-35deg);
+    -ms-transform:     rotate(-35deg);
+    -o-transform:      rotate(-35deg);
+    transform:         rotate(-35deg);
+	
 }
 
-#its-in-3d .noticed {
-    -webkit-transform: translateZ(-40px);
-    -moz-transform:    translateZ(-40px);
-    -ms-transform:     translateZ(-40px);
-    -o-transform:      translateZ(-40px);
-    transform:         translateZ(-40px);
+#contexts-code-tour2 .highlight {
+	position: absolute;
+	width: 280px;
+	height: 30px;
+	border: 5px solid #791f83;
+	top: 42px;
+	left: 50px;
 }
 
-#its-in-3d .its {
-    -webkit-transform: translateZ(60px);
-    -moz-transform:    translateZ(60px);
-    -ms-transform:     translateZ(60px);
-    -o-transform:      translateZ(60px);
-    transform:         translateZ(60px);
+#contexts-code-tour3 .highlight {
+	position: absolute;
+	width: 540px;
+	height: 30px;
+	border: 5px solid #791f83;
+	top: -3px;
+	left: 95px;
 }
 
-#its-in-3d .in {
-    -webkit-transform: translateZ(-10px);
-    -moz-transform:    translateZ(-10px);
-    -ms-transform:     translateZ(-10px);
-    -o-transform:      translateZ(-10px);
-    transform:         translateZ(-10px);
+#contexts-code-tour4 .highlight {
+	position: absolute;
+	width: 425px;
+	height: 30px;
+	border: 5px solid #791f83;
+	top: -3px;
+	left: 180px;
 }
 
-#its-in-3d .footnote {
-    font-size: 32px;
-
-    -webkit-transform: translateZ(-10px);
-    -moz-transform:    translateZ(-10px);
-    -ms-transform:     translateZ(-10px);
-    -o-transform:      translateZ(-10px);
-    transform:         translateZ(-10px);
+#contexts-tour.substep3 .context {
+	height: 460px;
 }
 
-#its-in-3d.present span,
-#its-in-3d.present b {
-    -webkit-transform: translateZ(0px);
-    -moz-transform:    translateZ(0px);
-    -ms-transform:     translateZ(0px);
-    -o-transform:      translateZ(0px);
-    transform:         translateZ(0px);
+#contexts-tour2.substep1 .context-fmeme {
+	height: 445px;
 }
+
+#contexts-tour2.substep2 .context-fmeme,
+#contexts-tour3 .context-fmeme,
+#contexts-tour4 .context-fmeme
+{
+	height: 80px;
+}
+
+#contexts-tour3.substep1 .context-fameme {
+	height: 445px;
+}
+
+#contexts-tour3.substep2 .context-fameme,
+#contexts-tour4 .context-fameme
+{
+	height: 80px;
+}
+
+#contexts-tour4 .context-fimeme {
+	height: 485px;
+}
+
+#contexts-tour4.substep2 .context-fimeme
+{
+	height: 80px;
+}
+
+#contexts-tour.substep4 .variable-object,
+#contexts-tour2 .vo-global,
+#contexts-tour3 .vo-global,
+#contexts-tour4 .vo-global
+ {
+	left: 150px; 
+	top: -165px;
+	
+	-webkit-transform: scale(0.1);
+    -moz-transform:    scale(0.1);
+    -ms-transform:     scale(0.1);
+    -o-transform:      scale(0.1);
+    transform:         scale(0.1);
+}
+
+#contexts-tour.substep4 .variable-object 
+{	
+	-webkit-animation: shrinkvo 1s ease 0s 1 normal;
+	-moz-animation: shrinkvo 1s ease 0s 1 normal;
+	-o-animation: shrinkvo 1s ease 0s 1 normal;
+}
+
+
+#contexts-tour2.substep1 .vo-fmeme 
+{
+	position: absolute;
+	top: 140px;
+	height: 265px;
+}
+
+#contexts-tour2 .sco-fmeme {
+	top: 412px;
+	left: 10px;
+	width: 380px;
+}
+
+#contexts-tour2 .to-fmeme {
+	top: 467px;
+	left: 10px;
+	width: 380px;
+}
+
+#contexts-tour3 .vo-fameme,
+#contexts-tour4 .vo-fameme
+{
+	position: absolute;
+	top: 245px;
+	height: 265px;
+}
+
+#contexts-tour3 .sco-fameme {
+	top: 517px;
+	left: 10px;
+	width: 380px;
+}
+
+#contexts-tour3 .to-fameme {
+	top: 572px;
+	left: 10px;
+	width: 380px;
+}
+
+#contexts-tour4 .vo-fimeme 
+{
+	position: absolute;
+	top: 355px;
+	height: 320px;
+}
+
+#contexts-tour4 .sco-fimeme {
+	top: 682px;
+	left: 10px;
+	width: 380px;
+}
+
+#contexts-tour4 .to-fimeme {
+	top: 737px;
+	left: 10px;
+	width: 380px;
+}
+
+@keyframes shrinkvo
+{
+0% { left: 10px; top: 60px; transform: scale(1)}
+100% { left: 150px; top: -165px;  transform: scale(0.1) }
+}
+
+@-moz-keyframes shrinkvo /* Firefox */
+{
+0% { left: 10px; top: 60px; -moz-transform: scale(1)}
+100% { left: 150px; top: -165px;  -moz-transform: scale(0.1) }
+}
+
+@-webkit-keyframes shrinkvo /*Safari and Chrome */
+{
+0% { left: 10px; top: 60px; -webkit-transform: scale(1) }
+100% { left: 150px; top: -165px;  -webkit-transform: scale(0.1) }
+}
+
+#contexts-tour2.substep2 .vo-fmeme,
+#contexts-tour3 .vo-fmeme,
+#contexts-tour4 .vo-fmeme
+ {
+	left: 150px; 
+	top: 40px;
+	
+	-webkit-transform: scale(0.1);
+    -moz-transform:    scale(0.1);
+    -ms-transform:     scale(0.1);
+    -o-transform:      scale(0.1);
+    transform:         scale(0.1);
+}
+
+#contexts-tour2.substep2 .vo-fmeme
+{	
+	-webkit-animation: shrinkvomeme 1s ease 0s 1 normal;
+	-moz-animation: shrinkvomeme 1s ease 0s 1 normal;
+	-o-animation: shrinkvomeme 1s ease 0s 1 normal;
+}
+
+@keyframes shrinkvomeme
+{
+0% { left: 10px; top: 60px; transform: scale(1)}
+100% { left: 150px; top:40px;  transform: scale(0.1) }
+}
+
+@-moz-keyframes shrinkvomeme /* Firefox */
+{
+0% { left: 10px; top: 60px; -moz-transform: scale(1)}
+100% { left: 150px; top: 40px;  -moz-transform: scale(0.1) }
+}
+
+@-webkit-keyframes shrinkvomeme /*Safari and Chrome */
+{
+0% { left: 10px; top: 60px; -webkit-transform: scale(1) }
+100% { left: 150px; top: 40px;  -webkit-transform: scale(0.1) }
+}
+
+#contexts-tour2.substep2 .to-fmeme,
+#contexts-tour3 .to-fmeme,
+#contexts-tour4 .to-fmeme
+ {
+	left: 110px; 
+	top: 125px;
+	width: 250px;
+	
+	-webkit-transform: scale(0.4);
+    -moz-transform:    scale(0.4);
+    -ms-transform:     scale(0.4);
+    -o-transform:      scale(0.4);
+    transform:         scale(0.4);
+}
+
+#contexts-tour2.substep2 .to-fmeme
+{	
+	-webkit-animation: shrinktomeme 1s ease 0s 1 normal;
+	-moz-animation: shrinktomeme 1s ease 0s 1 normal;
+	-o-animation: shrinktomeme 1s ease 0s 1 normal;
+}
+
+@keyframes shrinktomeme
+{
+0% { left: 10px; top: 467px; width:380px; transform: scale(1)}
+100% { left: 110px; top:125px; width:250px; transform: scale(0.4) }
+}
+
+@-moz-keyframes shrinktomeme /* Firefox */
+{
+0% { left: 10px; top: 467px; width:380px; -moz-transform: scale(1)}
+100% { left: 110px; top: 125px; width:250px; -moz-transform: scale(0.4) }
+}
+
+@-webkit-keyframes shrinktomeme /*Safari and Chrome */
+{
+0% { left: 10px; top: 467px; width:380px; -webkit-transform: scale(1) }
+100% { left: 110px; top: 125px; width:250px; -webkit-transform: scale(0.4) }
+}
+
+#contexts-tour2.substep2 .sco-fmeme,
+#contexts-tour3 .sco-fmeme,
+#contexts-tour4 .sco-fmeme
+ {
+	left: -90px; 
+	top: 125px;
+	width: 350px;
+	
+	-webkit-transform: scale(0.4);
+    -moz-transform:    scale(0.4);
+    -ms-transform:     scale(0.4);
+    -o-transform:      scale(0.4);
+    transform:         scale(0.4);
+}
+
+#contexts-tour2.substep2 .sco-fmeme
+{	
+	-webkit-animation: shrinkscomeme 1s ease 0s 1 normal;
+	-moz-animation: shrinkscomeme 1s ease 0s 1 normal;
+	-o-animation: shrinkscomeme 1s ease 0s 1 normal;
+}
+
+@keyframes shrinkscomeme
+{
+0% { left: 10px; top: 412px; width:380px; transform: scale(1)}
+100% { left: -90px; top:125px; width:350px; transform: scale(0.4) }
+}
+
+@-moz-keyframes shrinkscomeme /* Firefox */
+{
+0% { left: 10px; top: 412px; width:380px; -moz-transform: scale(1)}
+100% { left: -90px; top: 125px; width:350px; -moz-transform: scale(0.4) }
+}
+
+@-webkit-keyframes shrinkscomeme /*Safari and Chrome */
+{
+0% { left: 10px; top: 412px; width:380px; -webkit-transform: scale(1) }
+100% { left: -90px; top: 125px; width:350px; -webkit-transform: scale(0.4) }
+}
+
+
+
+
+#contexts-tour3.substep2 .vo-fameme,
+#contexts-tour4 .vo-fameme
+ {
+	left: 150px; 
+	top: 127px;
+	
+	-webkit-transform: scale(0.1);
+    -moz-transform:    scale(0.1);
+    -ms-transform:     scale(0.1);
+    -o-transform:      scale(0.1);
+    transform:         scale(0.1);
+}
+
+#contexts-tour3.substep2 .vo-fameme
+{	
+	-webkit-animation: shrinkvomeme2 1s ease 0s 1 normal;
+	-moz-animation: shrinkvomeme2 1s ease 0s 1 normal;
+	-o-animation: shrinkvomeme2 1s ease 0s 1 normal;
+}
+
+@keyframes shrinkvomeme2
+{
+0% { left: 10px; top: 60px; transform: scale(1)}
+100% { left: 150px; top:127px;  transform: scale(0.1) }
+}
+
+@-moz-keyframes shrinkvomeme2 /* Firefox */
+{
+0% { left: 10px; top: 60px; -moz-transform: scale(1)}
+100% { left: 150px; top: 127px;  -moz-transform: scale(0.1) }
+}
+
+@-webkit-keyframes shrinkvomeme2 /*Safari and Chrome */
+{
+0% { left: 10px; top: 60px; -webkit-transform: scale(1) }
+100% { left: 150px; top: 127px;  -webkit-transform: scale(0.1) }
+}
+
+#contexts-tour3.substep2 .to-fameme,
+#contexts-tour4 .to-fameme
+ {
+	left: 110px; 
+	top: 237px;
+	width: 250px;
+	
+	-webkit-transform: scale(0.4);
+    -moz-transform:    scale(0.4);
+    -ms-transform:     scale(0.4);
+    -o-transform:      scale(0.4);
+    transform:         scale(0.4);
+}
+
+#contexts-tour3.substep2 .to-fameme
+{	
+	-webkit-animation: shrinktomeme2 1s ease 0s 1 normal;
+	-moz-animation: shrinktomeme2 1s ease 0s 1 normal;
+	-o-animation: shrinktomeme2 1s ease 0s 1 normal;
+}
+
+@keyframes shrinktomeme2
+{
+0% { left: 10px; top: 467px; width:380px; transform: scale(1)}
+100% { left: 110px; top:237px; width:250px; transform: scale(0.4) }
+}
+
+@-moz-keyframes shrinktomeme2 /* Firefox */
+{
+0% { left: 10px; top: 467px; width:380px; -moz-transform: scale(1)}
+100% { left: 110px; top: 237px; width:250px; -moz-transform: scale(0.4) }
+}
+
+@-webkit-keyframes shrinktomeme2 /*Safari and Chrome */
+{
+0% { left: 10px; top: 467px; width:380px; -webkit-transform: scale(1) }
+100% { left: 110px; top: 237px; width:250px; -webkit-transform: scale(0.4) }
+}
+
+#contexts-tour3.substep2 .sco-fameme,
+#contexts-tour4 .sco-fameme
+ {
+	left: -90px; 
+	top: 215px;
+	width: 350px;
+	
+	-webkit-transform: scale(0.4);
+    -moz-transform:    scale(0.4);
+    -ms-transform:     scale(0.4);
+    -o-transform:      scale(0.4);
+    transform:         scale(0.4);
+}
+
+#contexts-tour3.substep2 .sco-fameme
+{	
+	-webkit-animation: shrinkscomeme2 1s ease 0s 1 normal;
+	-moz-animation: shrinkscomeme2 1s ease 0s 1 normal;
+	-o-animation: shrinkscomeme2 1s ease 0s 1 normal;
+}
+
+@keyframes shrinkscomeme2
+{
+0% { left: 10px; top: 412px; width:380px; transform: scale(1)}
+100% { left: -90px; top:215px; width:350px; transform: scale(0.4) }
+}
+
+@-moz-keyframes shrinkscomeme2 /* Firefox */
+{
+0% { left: 10px; top: 412px; width:380px; -moz-transform: scale(1)}
+100% { left: -90px; top: 215px; width:350px; -moz-transform: scale(0.4) }
+}
+
+@-webkit-keyframes shrinkscomeme2 /*Safari and Chrome */
+{
+0% { left: 10px; top: 412px; width:380px; -webkit-transform: scale(1) }
+100% { left: -90px; top: 215px; width:350px; -webkit-transform: scale(0.4) }
+}
+
+
 
 /*
     The last step is an overview.

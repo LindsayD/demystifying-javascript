@@ -508,8 +508,8 @@
 					asData.substep += (forward ? 1 : -1); // move forward or backward
 					if (asData.substep > 0 && asData.substep <= asData.substeps) 
 					{
-						options.onSubStepEnter(as, asData.substep, forward);
 						as.classList.add("substep" + asData.substep);
+						options.onSubStepEnter(as, asData.substep, forward);
 					}
 					return true;
 				}

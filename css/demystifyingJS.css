@@ -1818,6 +1818,7 @@ font-family: Consolas;
 #contexts-intro.substep9 .this-object,
 #contexts-intro.substep10 .this-object,
 #contexts-intro.substep11 .this-object,
+#contexts-intro.substep12 .this-object,
 #contexts-global.substep1 .this-object,
 #contexts-global.substep2 .this-object,
 #contexts-global.substep3 .this-object,
@@ -1909,7 +1910,8 @@ font-family: Consolas;
 
 #contexts-intro .this-content-method,
 #contexts-intro .this-content-funcinfunc,
-#contexts-intro .this-content-global 
+#contexts-intro .this-content-global,
+#contexts-intro .this-content-applied 
 {
 	position: absolute;
 	top: 5px;
@@ -1926,17 +1928,21 @@ font-family: Consolas;
 #contexts-intro .this-content-method,
 #contexts-intro .this-content-funcinfunc,
 #contexts-intro .this-content-global,
+#contexts-intro .this-content-applied,
 #contexts-intro .c-for-method,
 #contexts-intro .c-for-funcinfunc,
 #contexts-intro .c-for-global,
+#contexts-intro .c-for-applied,
 #contexts-intro .this-example-method,
 #contexts-intro .this-example-funcinfunc,
-#contexts-intro .this-example-global
+#contexts-intro .this-example-global,
+#contexts-intro .this-example-applied
 { opacity: 0; }
 
 #contexts-intro .c-for-method,
 #contexts-intro .c-for-funcinfunc,
-#contexts-intro .c-for-global
+#contexts-intro .c-for-global,
+#contexts-intro .c-for-applied
 { 
 	position: absolute;
 	display: block;
@@ -1947,7 +1953,8 @@ font-family: Consolas;
 
 #contexts-intro .this-example-method,
 #contexts-intro .this-example-funcinfunc,
-#contexts-intro .this-example-global
+#contexts-intro .this-example-global,
+#contexts-intro .this-example-applied
 { 
 	position: absolute;
 	top: 363px;
@@ -1958,12 +1965,15 @@ font-family: Consolas;
 #contexts-intro.substep9 .this-content-method,
 #contexts-intro.substep9 .c-for-method,
 #contexts-intro.substep9 .this-example-method,
-#contexts-intro.substep10 .this-content-funcinfunc,
-#contexts-intro.substep10 .c-for-funcinfunc,
-#contexts-intro.substep10 .this-example-funcinfunc,
-#contexts-intro.substep11 .this-content-global,
-#contexts-intro.substep11 .c-for-global,
-#contexts-intro.substep11 .this-example-global
+#contexts-intro.substep10 .this-content-applied,
+#contexts-intro.substep10 .c-for-applied,
+#contexts-intro.substep10 .this-example-applied,
+#contexts-intro.substep11 .this-content-funcinfunc,
+#contexts-intro.substep11 .c-for-funcinfunc,
+#contexts-intro.substep11 .this-example-funcinfunc,
+#contexts-intro.substep12 .this-content-global,
+#contexts-intro.substep12 .c-for-global,
+#contexts-intro.substep12 .this-example-global
 {
 	opacity: 1;
 
@@ -2636,6 +2646,14 @@ font-family: Consolas;
     opacity: 1;
     cursor: pointer;
 }
+
+
+#demo1 { display: none; }
+.impress-group-demo .step {
+	opacity: 1;
+}
+
+
 
 
 /*

@@ -425,10 +425,11 @@
 	
 	<div id="concepts2" class="step" data-mimic="concepts" data-x="0" data-y="-1500"></div>
 	
-	<div id="contexts-intro" class="step only-present" data-substeps="11" data-group="contexts" data-x="375" data-y="-1450" data-rotate-z="-90">
+	<div id="contexts-intro" class="step only-present" data-substeps="12" data-group="contexts" data-x="375" data-y="-1450" data-rotate-z="-90">
 		<div class="context context-exec">
 			<div class="c-name">Execution Context
 				<span class="c-for-method">for Function defined <span class="qualifier">as a Method</span></span>
+				<span class="c-for-applied">for Function applied <span class="qualifier">to an Instance</span></span>
 				<span class="c-for-funcinfunc">for Function defined <span class="qualifier">in a Function</span></span>
 				<span class="c-for-global">for Function defined <span class="qualifier">in Global</span></span>
 			</div>
@@ -454,11 +455,13 @@
 			<div class="t-name">this</div>
 			<div class="this-content-mystery">?</div>
 			<div class="this-content-method">The object the method is a property of.</div>
+			<div class="this-content-applied">The object the method applied against.</div>
 			<div class="this-content-funcinfunc">The object the calling context's <span style="font-family:Consolas">this</span> refers to.</div>
 			<div class="this-content-global">The<br/>Global Object (<span style="font-family:Consolas">window</span>).</div>
 		</div>
 		<div class="this-object-example">
 			<div class="this-example-method"><img src="images/code-contextex1.png" /></div>
+			<div class="this-example-applied"><img src="images/code-contextex4.png" /></div>
 			<div class="this-example-funcinfunc"><img src="images/code-contextex2.png" /></div>
 			<div class="this-example-global"><img src="images/code-contextex3.png" /></div>
 		</div>
@@ -682,7 +685,13 @@
 		<div class="highlight"></div>
 	</div>
 	
-	<div id="overview" class="step" data-x="0" data-y="-500" data-scale="6"></div>
+	<div id="demo1prop" class="step" data-group="demo" data-x="0" data-isprop="true" data-y="1500" data-scale="1.6">
+		<iframe style="width: 550px; height: 450px" src="http://jsfiddle.net/BlueCockatoo/nNftC/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+	</div>
+	
+	<div id="demo1" class="step" data-group="demo" data-x="-200" data-y="1500"></div>
+	
+	<div id="overview" class="stepno" data-x="0" data-y="-500" data-scale="6"></div>
 </div>
 
 <script src="js/impress.js"></script>

@@ -35,7 +35,7 @@
 		<div class="blurb">How I learned to stop worrying and love the Prototype.</div>
     </div>
 	
-	<div id="who" class="step" data-x="0" data-y="0" data-rotate-x="0" data-rotate-y="-90">
+	<div id="who" class="step only-group-who" data-group="who" data-x="0" data-y="0" data-rotate-x="0" data-rotate-y="-90">
 		<span style="font-size: 0.75em">My name is</span>&nbsp;
 		<span class="title">Lindsay Donaghe</span>
 		<ul>
@@ -45,15 +45,11 @@
 		</ul>
     </div>
 	
-	<div id="who2" class="step" data-x="0" data-y="0" data-rotate-x="0" data-rotate-y="-90" data-scale="1">
+	<div id="who2" class="step only-group-who" data-x="0" data-group="who" data-y="0" data-rotate-x="0" data-rotate-y="-90" data-scale="1">
 		<div style="position: absolute; top: 103px; left: 270px;">
 		We are creating a Javascript community:<br/>
 		Join us at meetup.intranet.gdg/<strong>starfield</strong>
 		</div>
-    </div>
-	
-	<div style="display:none;" id="history" class="step-no" data-x="-1200" data-y="-2000">
-        <h1>Long, long ago, in 1995...</h1>
     </div>
 	
 	<div id="concepts" class="step" data-x="0" data-y="-1500">
@@ -686,7 +682,7 @@
 	</div>
 	
 	<div id="demo1prop" class="step" data-group="demo" data-x="0" data-isprop="true" data-y="1500" data-scale="1.6">
-		<iframe style="width: 550px; height: 450px" src="http://jsfiddle.net/BlueCockatoo/nNftC/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+		<iframe style="width: 550px; height: 450px" src="http://jsfiddle.net/BlueCockatoo/VQPRr/embedded/js,result/presentation/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 	</div>
 	
 	<div id="demo1" class="step" data-group="demo" data-x="-200" data-y="1500"></div>
@@ -722,32 +718,6 @@ function(step, index, forward) {
 	
 	$('#protochain img').src = 'images/code-protochain' + (index - 1) + '.png';
 }
-
-/*
-
-		<div class="variable-object" style="display:none;">
-			<div class="objtype">Variable Object</div>
-			<ul>
-				<li class="var"><label>index:</label>0</li>
-				<li class="var"><label>title:</label>''</li>
-				<li class="var"><label>arr:</label>[]</li>
-				<li class="func"><label>foo:</label>(){...}</li>
-				<li class="func"><label>bar:</label>(index){...}</li>
-			</ul>
-		</div>
-
-*/
-
-/*
-var contextsintroActionSub3 = function(step, index, forward)
-{
-	var ul = $('#contexts-intro .variable-object ul');
-		alert('here');
-	var li=document.createElement("li");
-	li = ul.appendChild(li); 
-	li.innerHTML = '<li class="args"><label>arguments</label><span></span></li>';
-}
-*/
 
 var $ = function ( selector, context ) {
         context = context || document;

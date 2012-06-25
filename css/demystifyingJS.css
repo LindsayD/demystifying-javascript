@@ -244,13 +244,15 @@ a:focus {
 .impress-enabled  .step.only-group-instance,
 .impress-enabled  .step.only-group-constructor,
 .impress-enabled  .step.only-group-prototype,
-.impress-enabled  .step.only-group-contexts
+.impress-enabled  .step.only-group-contexts,
+.impress-enabled  .step.only-group-who
 { opacity: 0; }
 
 .impress-enabled.impress-group-instance .step.only-group-instance,
 .impress-enabled.impress-group-constructor .step.only-group-constructor,
 .impress-enabled.impress-group-prototype .step.only-group-prototype,
-.impress-enabled.impress-group-contexts .step.only-group-contexts 
+.impress-enabled.impress-group-contexts .step.only-group-contexts,
+.impress-enabled.impress-group-who .step.only-group-who
 { opacity: 1; }
 
 div.line{
@@ -1335,10 +1337,10 @@ to { opacity: 1; }
     transform:         rotate(-90deg);
 	
 	-webkit-transform-origin: 100% 0 0;
-    -moz-transform-origin: 0 0 0;
-    -ms-transform-origin: 0 0 0;
-    -o-transform-origin: 0 0 0;
-    transform-origin: 0 0 0;
+    -moz-transform-origin: 100% 0 0;
+    -ms-transform-origin: 100% 0 0;
+    -o-transform-origin: 100% 0 0;
+    transform-origin: 100% 0 0;
 }
 
 .impress-on-contexts-intro #contexts-code { opacity: 0; }

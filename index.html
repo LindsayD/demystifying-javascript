@@ -1,0 +1,742 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Demystifying Javascript</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <link href="http://fonts.googleapis.com/css?family=Sansita+One|Alegreya:400,900" rel="stylesheet" />
+    <link href="css/demystifyingJS.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+	<div id="start" class="step" data-substeps="2" data-x="0" data-y="0" data-scale="4">
+		<div class="heart"></div>
+        <div class="title">Demystifying Javascript</div>
+		<div class="blurb">How I learned to stop worrying and love the Prototype.</div>
+    </div>
+	
+	<div id="who" class="step only-group-who" data-group="who" data-x="0" data-y="0" data-rotate-x="0" data-rotate-y="-90">
+		<span style="font-size: 0.75em">My name is</span>&nbsp;
+		<span class="title">Lindsay Donaghe</span>
+		<ul>
+		<li>I love <strong>Javascript</strong>.</li>
+		<li>I build <strong>widgets</strong>.</li>
+		<li>I like to <strong>share</strong>.</li>
+		</ul>
+    </div>
+	
+	<div id="who2" class="step only-group-who" data-x="0" data-group="who" data-y="0" data-rotate-x="0" data-rotate-y="-90" data-scale="1">
+		<div style="position: absolute; top: 103px; left: 270px;">
+		We are creating a Javascript community:<br/>
+		Join us at meetup.intranet.gdg/<strong>starfield</strong>
+		</div>
+    </div>
+	
+	<div id="concepts" class="step" data-x="0" data-y="-1500">
+        <div class="objects">Objects</div>
+		<div class="contexts">Contexts</div>
+    </div>
+	
+	<div id="obj-data" class="step only-present" data-substeps="2" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+		<div class="substep">
+			<ul>
+			<li class="data data1"><label><span>Name:</span></label>Lindsay Donaghe</li>
+			<li class="data data4"><label><span>Email:</span></label>ldonaghe@godaddy.com</li>
+			<li class="data data6"><label><span>Phone:</span></label>602.325.3318</li>
+			<li class="data data3"><label><span>Birthdate:</span></label>09/07/1975</li>
+			<li class="data data2"><label><span>Favorite Color:</span></label>purple</li>
+			<li class="data data7"><label><span>Favorite Animal:</span></label>birds</li>
+			</ul>
+		</div>
+    </div>
+	
+	<div id="obj-data2" class="step only-present" data-substeps="2" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+		<div class="substep">
+			<ul>
+			<li class="data data1"><label><span>Key:</span></label>Value</li>
+			<li class="data data4"><label><span>Key:</span></label>Value</li>
+			<li class="data data6"><label><span>Key:</span></label>Value</li>
+			<li class="data data3"><label><span>Key:</span></label>Value</li>
+			<li class="data data2"><label><span>Key:</span></label>Value</li>
+			<li class="data data7"><label><span>Key:</span></label>Value</li>
+			</ul>
+		</div>
+    </div>
+	
+	<div id="obj2" class="step only-present" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+		<div class="substep">
+			<div class="g-property">Property</div>
+		</div>
+    </div>
+	
+	<div id="obj3" class="step only-present" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+		<div class="substep">
+			<div class="g-property">Property</div>
+			<div class="g-object">
+				<div>Object</div>
+			</div>
+		</div>
+    </div>
+	
+	<div id="obj4" class="step only-present" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+		<div class="substep">
+			<div class="g-property">Property</div>
+			<div class="g-object">
+				<div>Object</div>
+				<ul>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				</ul>
+			</div>
+		</div>
+    </div>
+	
+	<div id="obj5" class="step only-present smoothfade" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+		<div class="substep" style="margin-top: 20px;">
+			<div class="g-object type-object">
+				<div>Constructor</div>
+				<ul>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				</ul>
+			</div>
+			<div class="g-object trait-object">
+				<div>Prototype</div>
+				<ul>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				</ul>
+			</div>
+			<div class="g-object instance-object">
+				<div>Instance</div>
+				<ul>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				</ul>
+			</div>
+		</div>
+    </div>
+	
+	<div id="obj6" class="step only-present smoothfade" data-group="objects" data-x="-390" data-y="-1400" data-rotate-z="90">
+		<div class="substep" style="margin-top: 20px;">
+			<div class="g-object type-object">
+				<div>Constructor</div>
+				<ul>
+				<li class="trait">Prototype</li>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				</ul>
+			</div>
+			<div class="g-object trait-object">
+				<div>Prototype</div>
+				<ul>
+				<li class="type">Constructor</li>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				</ul>
+			</div>
+			<div class="g-object instance-object">
+				<div>Instance</div>
+				<ul>
+				<li class="type">Constructor</li>
+				<li>Property</li>
+				<li>Property</li>
+				<li>Property</li>
+				</ul>
+			</div>
+			<div class="curve1"></div><div class="curve2"></div><div class="curve3"></div>
+		</div>
+    </div>
+	
+	<div id="instance1" class="step only-group-instance" data-isprop="true" data-group="instance" data-x="-600" data-y="-1450" data-z="-800">
+		<div class="substep">
+			<div class="type-object-details object-details">
+				<div class="title">Instance</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="instance2" class="step only-present" data-group="instance" data-x="-600" data-y="-1450" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Everybody loves Instances.</div>
+				<img src="images/code-instance1.png" />
+			</div>
+		</div>
+	</div>
+	
+	<div id="instance3" class="step only-present" data-group="instance" data-x="-600" data-y="-1450" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Instant Extensibility</div>
+				<img src="images/code-instance2.png" />
+			</div>
+		</div>
+	</div>
+	
+	<div id="instance4" class="step only-present" data-group="instance" data-x="-600" data-y="-1450" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Oh the things we can do...</div>
+				<img src="images/code-instance3.png" />
+			</div>
+		</div>
+	</div>
+	
+	<div id="instance3" class="step only-present" data-group="instance" data-x="-600" data-y="-1450" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>More is better?</div>
+				<img src="images/code-instance4.png" />
+			</div>
+		</div>
+	</div>
+	
+	<div id="instance4" class="step only-present" data-group="instance" data-x="-600" data-y="-1450" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>We can rebuild him. We have the technology.</div>
+				<img src="images/code-instance5.png" />
+			</div>
+		</div>
+	</div>
+
+	<div id="constructor" class="step" data-mimic="obj6"></div>
+	
+	<div id="constructor1" class="step only-group-constructor" data-isprop="true" data-group="constructor" data-x="-200" data-y="-1750" data-z="-800">
+		<div class="substep">
+			<div class="type-object-details object-details">
+				<div class="title">Constructor</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="constructor2" class="step only-present" data-group="constructor" data-x="-200" data-y="-1750" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>The Object Factory</div>
+				<img src="images/code-constructor1.png" />
+			</div>
+		</div>
+	</div>
+	
+	<div id="constructor3" class="step only-present" data-group="constructor" data-x="-200" data-y="-1750" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Initializes an Instance</div>
+				<img src="images/code-constructor2.png" />
+			</div>
+		</div>
+	</div>
+	
+	<div id="constructor5" class="step only-present" data-group="constructor" data-x="-200" data-y="-1750" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Where does it live?</div>
+				<img src="images/code-constructor4.png" />
+			</div>
+		</div>
+	</div>
+	
+	<div id="constructor4" class="step only-present" data-group="constructor" data-x="-200" data-y="-1750" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Verifies object Pedigree vs Type</div>
+				<img src="images/code-constructor3.png" />
+			</div>
+		</div>
+	</div>
+	
+	<div id="prototype" class="step" data-mimic="obj6"></div>
+	
+	<div id="prototype1" class="step only-group-prototype" data-isprop="true" data-group="prototype" data-x="-200" data-y="-1025" data-z="-800">
+		<div class="substep">
+			<div class="type-object-details object-details">
+				<div class="title">Protoype</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="prototype2" class="step only-present" data-group="prototype" data-x="-200" data-y="-1025" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>We are all connected</div>
+				<img src="images/code-prototype1.png" />				
+			</div>
+		</div>
+	</div>
+	
+	<div id="prototype2" class="step only-present" data-group="prototype" data-x="-200" data-y="-1025" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Instant extensibility</div>
+				<img src="images/code-prototype2.png" />				
+			</div>
+		</div>
+	</div>
+	
+	<div id="prototype3" class="step only-present" data-group="prototype" data-x="-200" data-y="-1025" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>REALLY Instant extensibility</div>
+				<img src="images/code-prototype3.png" />				
+			</div>
+		</div>
+	</div>
+	
+	<div id="prototype5" class="step only-present" data-group="prototype" data-x="-200" data-y="-1025" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Default value provider</div>
+				<img src="images/code-prototype4.png" />				
+			</div>
+		</div>
+	</div>
+	
+	<div id="prototype6" class="step only-present" data-group="prototype" data-x="-200" data-y="-1025" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>More than one way to skin a Nyan cat</div>
+				<img src="images/code-prototype5.png" />				
+			</div>
+		</div>
+	</div>
+	
+	<div id="prototype-inheritance" class="step" data-mimic="obj6"></div>
+	
+	<div id="inheritance1" class="step only-present" data-group="prototype" data-x="-200" data-y="-1025" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Inheritance via the Prototype</div>
+				<img src="images/code-prototype6.png" />				
+			</div>
+		</div>
+	</div>
+	
+	<div id="inheritance2" class="step only-present" data-group="prototype" data-x="-200" data-y="-1025" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Are you my type?</div>
+				<img src="images/code-prototype7.png" />				
+			</div>
+		</div>
+	</div>
+	
+	<div id="inheritance3" class="step only-present" data-group="prototype" data-x="-200" data-y="-1025" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Know where you're coming from...</div>
+				<img src="images/code-prototype8.png" />				
+			</div>
+		</div>
+	</div>
+	
+	<div id="inheritance4" class="step only-present" data-group="prototype" data-x="-200" data-y="-1025" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>Now we have it.</div>
+				<img src="images/code-prototype9.png" />				
+			</div>
+		</div>
+	</div>
+	
+	<div id="protochain" class="step only-present" data-group="prototype" data-substeps="6" data-x="-200" data-y="-1025" data-z="-800">
+		<div class="substep">
+			<div class="content">
+				<div>The Chain Gang</div>
+				<img src="images/code-protochain1.png" />
+				
+				<div class="g-object pc1 instance-color">
+					<div>I:meme</div>
+					<ul>
+					<li>name</li>
+					<li>graphic</li>
+					<li>assemble</li>
+					<li>...</li>
+					</ul>
+				</div>
+				<div class="g-object pc2 trait-color">
+					<div>P:TextMeme</div>
+					<ul>
+					<li>topText</li>
+					<li>bottomText</li>
+					<li>fontSize</li>
+					<li>...</li>
+					</ul>
+				</div>
+				<div class="g-object pc3 trait-color">
+					<div>P:Meme</div>
+					<ul>
+					<li>author</li>
+					<li>name</li>
+					<li>variations</li>
+					<li>...</li>
+					</ul>
+				</div>
+				<div class="g-object pc4 trait-color">
+					<div>P:Object</div>
+					<ul>
+					<li>toString</li>
+					<li style="font-size: 80%;padding: 15px 10px;">hasOwnProperty</li>
+					<li style="font-size: 80%;padding: 15px 10px;">isPrototypeOf</li>
+					<li>...</li>
+					</ul>
+				</div>
+				<div class="curve curve1"></div>
+				<div class="curve curve2"></div>
+				<div class="curve curve3"></div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="concepts2" class="step" data-mimic="concepts" data-x="0" data-y="-1500"></div>
+	
+	<div id="contexts-intro" class="step only-present" data-substeps="12" data-group="contexts" data-x="375" data-y="-1450" data-rotate-z="-90">
+		<div class="context context-exec">
+			<div class="c-name">Execution Context
+				<span class="c-for-method">for Function defined <span class="qualifier">as a Method</span></span>
+				<span class="c-for-applied">for Function applied <span class="qualifier">to an Instance</span></span>
+				<span class="c-for-funcinfunc">for Function defined <span class="qualifier">in a Function</span></span>
+				<span class="c-for-global">for Function defined <span class="qualifier">in Global</span></span>
+			</div>
+		</div>
+		<div class="scope-object">
+			<div class="s-name">Scope</div>
+		</div>
+		<div class="variable-object">
+			<div class="objtype objtype-v">Variable Object</div>
+			<div class="objtype objtype-a">Activation Object</div>
+			<ul>
+				<li class="var"><label>index:</label><span class="proptype-v">undefined</span><span class="proptype-a">0</span></li>
+				<li class="var"><label>title:</label><span class="proptype-v">undefined</span><span class="proptype-a">''</span></li>
+				<li class="var"><label>arr:</label><span class="proptype-v">undefined</span><span class="proptype-a">[]</span></li>
+				<li class="func"><label>foo:</label><span class="proptype-v">undefined</span><span class="proptype-a">() {...}</span><span class="f-scope">[[scope]]</span></li>
+				<li class="func"><label>bar:</label><span class="proptype-v">undefined</span><span class="proptype-a">(index) {...}</span><span class="f-scope">[[scope]]</span></li>
+				<li class="args"><label>[arguments]</label></li>
+			</ul>
+		</div>
+		<div class="scopechain-object"><label>Scope Chain:</label> Caller's <span>[[scope]]</span></div>
+		<div class="scopecurve1"></div><div class="scopecurve2"></div><div class="scopecurve3"></div>
+		<div class="this-object">
+			<div class="t-name">this</div>
+			<div class="this-content-mystery">?</div>
+			<div class="this-content-method">The object the method is a property of.</div>
+			<div class="this-content-applied">The object the method applied against.</div>
+			<div class="this-content-funcinfunc">The object the calling context's <span style="font-family:Consolas">this</span> refers to.</div>
+			<div class="this-content-global">The<br/>Global Object (<span style="font-family:Consolas">window</span>).</div>
+		</div>
+		<div class="this-object-example">
+			<div class="this-example-method"><img src="images/code-contextex1.png" /></div>
+			<div class="this-example-applied"><img src="images/code-contextex4.png" /></div>
+			<div class="this-example-funcinfunc"><img src="images/code-contextex2.png" /></div>
+			<div class="this-example-global"><img src="images/code-contextex3.png" /></div>
+		</div>
+    </div>
+	
+	<div id="contexts-global" class="step only-present smoothfade" data-substeps="5" data-group="contexts" data-x="375" data-y="-1450" data-rotate-z="-90">
+		<div class="context context-exec">
+			<div class="c-name">Global Execution Context</div>
+		</div>
+		<div class="scope-object">
+			<div class="s-name">Scope</div>
+		</div>
+		<div class="variable-object">
+			<div class="objtype objtype-v">Variable Object</div>
+			<div class="objtype objtype-a">Activation Object</div>
+			<div class="objtype objtype-t">this === window</div>
+			<ul>
+				<li class="var"><label>index:</label><span class="proptype-a">0</span></li>
+				<li class="var"><label>title:</label><span class="proptype-a">''</span></li>
+				<li class="var"><label>arr:</label><span class="proptype-a">[]</span></li>
+				<li class="func"><label>foo:</label><span class="proptype-a">() {...}</span><span class="f-scope">[[scope]]</span></li>
+				<li class="func"><label>bar:</label><span class="proptype-a">(index) {...}</span><span class="f-scope">[[scope]]</span></li>
+				<li class="args"><label>[arguments]</label></li>
+				<li class="schain"><label>[[scope]]</label</li>
+			</ul>
+		</div>
+		<div class="scopechain-object"><label>Scope Chain:</label> Root <span>[[scope]]</span></div>
+		<div class="this-object">
+			<div class="t-name">this</div>
+			<div class="this-content-mystery">?</div>
+		</div>
+    </div>
+	
+	<div id="contexts-code" class="step only-group-contexts" data-isprop="true" data-group="contexts" data-x="700" data-y="-1900" data-rotate-z="-90">
+		<img src="images/code-contexts.png" />
+    </div>
+	
+	<div id="contexts-code-top" class="step" data-group="contexts" data-x="500" data-y="-1900" data-rotate-z="-90"></div>
+	<div id="contexts-code-bottom" class="step" data-group="contexts" data-x="900" data-y="-1900" data-rotate-z="-90"></div>
+	
+	<div id="contexts-tour" class="step only-present smoothfade" data-substeps="4" data-group="contexts" data-x="600" data-y="-1500" data-rotate-z="-90" data-scale="1.75">
+		<div class="c-queue">
+			<div class="context context-global">
+				<div class="c-name">Global Context: SCRIPT</div>
+			</div>
+			<div class="variable-object">
+				<div class="objtype objtype-v">Variable Object</div>
+				<div class="objtype objtype-t">window</div>
+				<ul>
+					<li class="var"><label>memes</label><span class="proptype-a">: []</span></li>
+					<li class="var"><label>currentMemeIndex</label><span class="proptype-a">: -1</span></li>
+					<li class="func"><label>Meme</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="func"><label>buildMemes</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="func"><label>displayMemes</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="schain"><label>[[scope]]</label><span class="proptype-a"> -> window </span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="curve1"></div><div class="curve2"></div><div class="curve3"></div><div class="curve4"></div><div class="curve5"></div>
+    </div>
+	
+	<div id="contexts-code-tour2" class="step only-present" data-group="contexts" data-x="1200" data-y="-1900" data-rotate-z="-90">
+		<div class="highlight"></div>
+	</div>
+	
+	<div id="contexts-tour2" class="step only-present smoothfade" data-substeps="2" data-group="contexts" data-x="600" data-y="-1500" data-rotate-z="-90" data-scale="1.75">
+		<div class="c-queue">
+			<div class="context context-global">
+				<div class="c-name">Global Context: SCRIPT</div>
+			</div>
+			<div class="vo-global variable-object">
+				<div class="objtype objtype-t">window</div>
+				<ul>
+					<li class="var"><label>memes</label><span class="proptype-a">: []</span></li>
+					<li class="var"><label>currentMemeIndex</label><span class="proptype-a">: -1</span></li>
+					<li class="func"><label>Meme</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="func"><label>buildMemes</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="func"><label>displayMemes</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="schain"><label>[[scope]]</label><span class="proptype-a"> -> window </span></li>
+				</ul>
+			</div>
+			<div class="context context-function context-fmeme">
+				<div class="c-name">Function Context: buildMemes</div>
+			</div>
+			<div class="vo-fmeme variable-object">
+				<div class="objtype">Activation Object</div>
+				<ul>
+					<li class="var"><label>count:</label> 0</li>
+					<li class="func"><label>addMeme:</label> (...) {...}</li>
+					<li class="args"><label>[arguments]</label><br/><span class="func">OnBuilt: (...) {...}</span></li>
+				</ul>
+			</div>
+			<div class="scopechain-object sco-fmeme"><label>Scope Chain:</label> Global Context</div>
+			<div class="to-fmeme this-object"><label>this:</label> window</div>
+		</div>
+    </div>
+	
+	<div id="contexts-code-tour3" class="step only-present" data-group="contexts" data-x="900" data-y="-1900" data-rotate-z="-90">
+		<div class="highlight"></div>
+	</div>
+	
+	<div id="contexts-tour3" class="step only-present smoothfade" data-substeps="2" data-group="contexts" data-x="600" data-y="-1500" data-rotate-z="-90" data-scale="1.75">
+		<div class="c-queue">
+			<div class="context context-global">
+				<div class="c-name">Global Context: SCRIPT</div>
+			</div>
+			<div class="vo-global variable-object">
+				<div class="objtype objtype-t">window</div>
+				<ul>
+					<li class="var"><label>memes</label><span class="proptype-a">: []</span></li>
+					<li class="var"><label>currentMemeIndex</label><span class="proptype-a">: -1</span></li>
+					<li class="func"><label>Meme</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="func"><label>buildMemes</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="func"><label>displayMemes</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="schain"><label>[[scope]]</label><span class="proptype-a"> -> window </span></li>
+				</ul>
+			</div>
+			<div class="context context-function context-fmeme">
+				<div class="c-name">Function Context: buildMemes</div>
+			</div>
+			<div class="vo-fmeme variable-object">
+				<div class="objtype">Activation Object</div>
+				<ul>
+					<li class="var"><label>count:</label> 0</li>
+					<li class="func"><label>buildMeme:</label> (...) {...}</li>
+					<li class="args"><label>[arguments]</label><br/><span class="func">OnBuilt: (...) {...}</span></li>
+				</ul>
+			</div>
+			<div class="scopechain-object sco-fmeme"><label>Scope Chain:</label> Global Context</div>
+			<div class="to-fmeme this-object"><label>this:</label> window</div>
+
+			<div class="context context-function context-fameme">
+				<div class="c-name">Function Context: addMeme</div>
+			</div>
+			<div class="vo-fameme variable-object">
+				<div class="objtype">Activation Object</div>
+				<ul>
+					<li class="args"><label>[arguments]</label><br/><span class="var">meme: instanceOf Meme</span></li>
+				</ul>
+			</div>
+			<div class="scopechain-object sco-fameme"><label>Scope Chain:</label> buildMemes Context</div>
+			<div class="to-fameme this-object"><label>this:</label> window</div>
+		</div>
+    </div>
+	
+	<div id="contexts-code-tour4" class="step only-present" data-group="contexts" data-x="900" data-y="-1900" data-rotate-z="-90">
+		<div class="highlight"></div>
+	</div>
+	
+	<div id="contexts-code-tour4b" class="step only-present" data-group="contexts" data-x="400" data-y="-1900" data-rotate-z="-90">
+		<div class="highlight"></div>
+	</div>
+	
+	<div id="contexts-tour4" class="step only-present smoothfade" data-group="contexts" data-x="600" data-y="-1500" data-rotate-z="-90" data-scale="1.75">
+		<div class="c-queue" style="margin-top: -190px;">
+			<div class="context context-global">
+				<div class="c-name">Global Context: SCRIPT</div>
+			</div>
+			<div class="vo-global variable-object">
+				<div class="objtype objtype-t">window</div>
+				<ul>
+					<li class="var"><label>memes</label><span class="proptype-a">: []</span></li>
+					<li class="var"><label>currentMemeIndex</label><span class="proptype-a">: -1</span></li>
+					<li class="func"><label>Meme</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="func"><label>buildMemes</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="func"><label>displayMemes</label><span class="proptype-a">: (...) {...}</span></li>
+					<li class="schain"><label>[[scope]]</label><span class="proptype-a"> -> window </span></li>
+				</ul>
+			</div>
+			<div class="context context-function context-fmeme">
+				<div class="c-name">Function Context: buildMemes</div>
+			</div>
+			<div class="vo-fmeme variable-object">
+				<div class="objtype">Activation Object</div>
+				<ul>
+					<li class="var"><label>count:</label> 0</li>
+					<li class="func"><label>buildMeme:</label> (...) {...}</li>
+					<li class="args"><label>[arguments]</label><br/><span class="func">OnBuilt: (...) {...}</span></li>
+				</ul>
+			</div>
+			<div class="scopechain-object sco-fmeme"><label>Scope Chain:</label> Global Context</div>
+			<div class="to-fmeme this-object"><label>this:</label> window</div>
+
+			<div class="context context-function context-fameme">
+				<div class="c-name">Function Context: addMeme</div>
+			</div>
+			<div class="vo-fameme variable-object">
+				<div class="objtype">Activation Object</div>
+				<ul>
+					<li class="args"><label>[arguments]</label><br/><span class="var">meme: instanceOf Meme</span></li>
+				</ul>
+			</div>
+			<div class="scopechain-object sco-fameme"><label>Scope Chain:</label> buildMemes Context</div>
+			<div class="to-fameme this-object"><label>this:</label> window</div>
+			
+			<div class="context context-function context-fimeme">
+				<div class="c-name">Function Context: Meme</div>
+			</div>
+			<div class="vo-fimeme variable-object">
+				<div class="objtype">Activation Object</div>
+				<ul>
+					<li class="var"><label>$m:</label> instance of Meme</li>
+					<li class="var"><label>width:</label> 500</li>
+					<li class="var"><label>height:</label> 350</li>
+					<li class="args"><label>[arguments]</label><br/>
+					<span class="var">name: 'Nyan Cat'</span><br/>
+					<span class="var">graphic: 'images/....'</span>
+					</li>
+				</ul>
+			</div>
+			<div class="scopechain-object sco-fimeme"><label>Scope Chain:</label> buildMemes Context</div>
+			<div class="to-fimeme this-object"><label>this:</label> instance of Meme</div>
+		</div>
+    </div>
+
+	<div id="contexts-code-tour5" class="step only-present" data-group="contexts" data-x="400" data-y="-1900" data-rotate-z="-90">
+		<div class="highlight"></div>
+	</div>
+	
+	<div id="contexts-code-tour5" class="step only-present" data-group="contexts" data-x="1000" data-y="-1900" data-rotate-z="-90">
+		<div class="highlight"></div>
+	</div>
+	
+	<div id="demo1prop" class="step" data-group="demo" data-x="0" data-isprop="true" data-y="1500" data-scale="1.6">
+		<iframe style="width: 550px; height: 450px" src="http://jsfiddle.net/BlueCockatoo/VQPRr/embedded/js,result/presentation/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+	</div>
+	
+	<div id="demo1" class="step" data-group="demo" data-x="-200" data-y="1500"></div>
+	
+	<div id="overview" class="stepno" data-x="0" data-y="-500" data-scale="6"></div>
+</div>
+
+<script src="js/impress.js"></script>
+<script>impress(undefined, {
+	onStepEnter: function(step) { 
+		var method = step.id + 'Action'.replace('-','');
+		if (window[method] !== undefined) window[method](step); 
+	},
+	onSubStepEnter: function(step, substepIndex, forward) { 
+		var method = (step.id + 'ActionSub' + substepIndex).replace('-','');
+		if (window[method] !== undefined) window[method](step, substepIndex, forward);
+	}
+}).init();
+
+var protochainActionSub2 =
+	protochainActionSub3 = 
+	protochainActionSub4 =
+	protochainActionSub5 =
+	protochainActionSub6 =
+function(step, index, forward) {
+	var els = $$('#protochain .g-object li, #protochain .curve');
+
+	for (var i = 0; i < els.length; i ++) {
+		var el = els[i],
+			newOne = el.cloneNode(true);
+		el.parentNode.replaceChild(newOne, el);
+	}
+	
+	$('#protochain img').src = 'images/code-protochain' + (index - 1) + '.png';
+}
+
+var $ = function ( selector, context ) {
+        context = context || document;
+        return context.querySelector(selector);
+};
+
+// `arraify` takes an array-like object and turns it into real Array
+// to make all the Array.prototype goodness available.
+var arrayify = function ( a ) {
+	return [].slice.call( a );
+};
+
+// `$$` return an array of elements for given CSS `selector` in the `context` of
+// the given element or whole document.
+var $$ = function ( selector, context ) {
+	context = context || document;
+	return arrayify( context.querySelectorAll(selector) );
+}
+
+</script>
+</body>
+</html>

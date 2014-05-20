@@ -1,4 +1,7 @@
 demystifying-javascript
 =======================
 
-My TechFest 2012 presentation on Javascript built in a modified version of impress.js
+Lindsay's TechFest 2012 presentation on Javascript fundamentals.
+See it here: http://lindsayd.github.io/demystifying-javascript
+
+Built with a modified version of impress.js.
